@@ -1,0 +1,2098 @@
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+miranda v3.3a    microRNA Target Scanning Algorithm
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(c) 2003 Memorial Sloan-Kettering Cancer Center, New York
+
+Authors: Anton Enright, Bino John, Chris Sander and Debora Marks
+(mirnatargets (at) cbio.mskcc.org - reaches all authors)
+
+Software written by: Anton Enright
+Distributed for anyone to use under the GNU Public License (GPL),
+See the files 'COPYING' and 'LICENSE' for details
+
+If you use this software please cite:
+Enright AJ, John B, Gaul U, Tuschl T, Sander C and Marks DS;
+(2003) Genome Biology; 5(1):R1.
+
+   miranda comes with ABSOLUTELY NO WARRANTY;
+   This is free software, and you are welcome to redistribute it
+   under certain conditions; type `miranda --license' for details.
+
+Current Settings:
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Query Filename: 	query/r.fasta
+Reference Filename:	target/NC_000913.fa
+Gap Open Penalty:	-9.000000
+Gap Extend Penalty:	-4.000000
+Score Threshold:	140.000000
+Energy Threshold:	-4.000000 kcal/mol
+Scaling Parameter:	4.000000
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Read Sequence:ryhB (90 nt)
+Read Sequence:b0001 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0001
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 163.000000  Q:2 to 84  R:1 to 78 Align Len (83) (50.60%) (59.04%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCA-CGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                       ||:|:::  | | :|   | || |||   ||||   |:||||| | ||  || |  || |:      || || |  ||||| | 
+   Ref:      5' ------aAGTATTTTTCAGCTT--TTCATTCTGACTGCAA--CGGGCAATAT-GTCTCTGTGTGGATTAAAAAAAGAGTGT--CTGATAGc 3'
+
+   Energy:  -55.139999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0001	163.00	-55.14	2 84	1 78	83	50.60%	59.04%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0001	163.00	-55.14	163.00	-55.14	1	90	300	 1
+Complete
+
+Read Sequence:b0002 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0002
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 140.000000  Q:2 to 89  R:140 to 248 Align Len (107) (51.40%) (56.07%)
+
+   Query:    3' ttTTCGGTCGTGGGC-----CGACCGATTCATTA---TGACCTTCGTTACAC--TCGT---TACAGCACGAAAGTCCAAG-----AGGCGCTCCCAG--AAGGACTAGCg 5'
+                  ||||| |||||:|     || ||||   |  |   ||   |:|:|| | |  | ||   ||| || |: || | ||||     | | : || | |   | | || || 
+   Ref:      5' aaAAGCCCGCACCTGACAGTGCGGGCTTTTTTTTTCGACCAAAGGTAACGAGGTAACAACCATG-CGAGTGTTGAAGTTCGGCGGTACATCAGTGGCAAATGCAGAACGt 3'
+
+   Energy:  -73.440002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0002	140.00	-73.44	2 89	140 248	107	51.40%	56.07%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0002	140.00	-73.44	140.00	-73.44	2	90	300	 140
+Complete
+
+Read Sequence:b0003 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0003
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 234.000000  Q:3 to 86  R:83 to 166 Align Len (86) (58.14%) (70.93%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCG-ATTCATTATG-ACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAG-GACTAGcg 5'
+                     ::| || || |||| | | :||| |:|  |||  :::|| |:|||||| ||   || |||     |:|| :| |||||: ||||||  
+   Ref:      5' cactaTTATCAGCC-GCTGCCGTTGGTACTGCGCGGATATGGTGCGGGCAATGACG---TTACAG-----CTGCCGGTGTCTTTGCTGATCtg 3'
+
+   Energy:  -70.120003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0003	234.00	-70.12	3 86	83 166	86	58.14%	70.93%
+
+
+   Forward:	Score: 185.000000  Q:2 to 89  R:183 to 287 Align Len (106) (56.60%) (64.15%)
+
+   Query:    3' ttTTCGGTCGT-GGGCCG-ACCGA-TTC-ATTAT--GACC----TTC---GTTACACTCGTTACAGCACGAAAGTCCAAGAG--GCGCTCCCA----GAAGGACTAGCg 5'
+                  |||::|| | :|:| | |||:| ||| | ||:  | ||     ||   |||| |||||   |||| | ||| | || |||   |||: |||    | | :|||| | 
+   Ref:      5' ggAAGTTAGGAGTCTGACATGGTTAAAGTTTATGCCCCGGCTTCCAGTGCCAATATGAGC---GTCG-GGTTTGATGTGCTCGGGGCGGCGGTGACACCTGTTGATGGt 3'
+
+   Energy:  -72.330002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0003	185.00	-72.33	2 89	183 287	106	56.60%	64.15%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0003	419.00	-142.45	234.00	-72.33	3	90	300	 83 183
+Complete
+
+Read Sequence:b0004 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0004
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 156.000000  Q:2 to 86  R:90 to 174 Align Len (91) (56.04%) (62.64%)
+
+   Query:    3' ttttcGGTCGTG----GGCCGACCGATTCATT-ATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGA-CTA-GCg 5'
+                     |||||:|    ||| ||||:|::||||  |||    ||||  | || || ||: ||  ||||  ||: ||     ||     || ||| || 
+   Ref:      5' accgcCCAGCGCGTTGCCGACTGGTTGGGTAAGAACTACCTGCAAAATCAGGAAGGTTTTG--TTCATATTTGCC-----GG-----CTGGATACGg 3'
+
+   Energy:  -68.000000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0004	156.00	-68.00	2 86	90 174	91	56.04%	62.64%
+
+
+   Forward:	Score: 150.000000  Q:2 to 80  R:1 to 70 Align Len (80) (51.25%) (62.50%)
+
+   Query:    3' ttttcggtcgtGGGCCGACCGAT-TCATTATGACCTTCGTTA-CACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                           | |||| ||| :  | :: | | |: ||::| | ||||::| ||      || ||  ||||| |   | |  |:|| ||| 
+   Ref:      5' -----------CGCGGCAGGCGGTCGCGGAAATCGGCGCGGTAGCGAGCGGTATC------TCCGG--CTCCG-GCCCGAC--CTTGTTCGc 3'
+
+   Energy:  -65.930000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0004	150.00	-65.93	2 80	1 70	80	51.25%	62.50%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0004	306.00	-133.93	156.00	-68.00	4	90	300	 90 1
+Complete
+
+Read Sequence:b0005 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0005
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 186.000000  Q:2 to 86  R:160 to 250 Align Len (91) (53.85%) (62.64%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTT--ACACTCGTTACA-GCACGAAAGTCCAAGAGGCGCTCCCA--GA--AGGACTAGCg 5'
+                     :|: | | :  | ||| || |:|||   |:||:||  |||||  ||  | |   || ||  || || ||| |   |  ||  |:|||:||| 
+   Ref:      5' ggataTCGACCCATAACGGGC-AA-TGATAAAAGGAGTAACCTGTGAAAAAGATGCAATCTATC--GTACT-CGC-ACTTTCCCTGGTTCTGGTCGc 3'
+
+   Energy:  -66.080002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0005	186.00	-66.08	2 86	160 250	91	53.85%	62.64%
+
+
+   Forward:	Score: 156.000000  Q:2 to 69  R:58 to 150 Align Len (74) (52.70%) (58.11%)
+
+   Query:    3' ttttcggtcgtgggccgaccgaTTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGC-------GCTCCCAGAAGGACTAGCg 5'
+                                      :|| ||| ||  ||  |||| | |:||  | | | ||  ||| |: | |       | |  | | |:|| |||| 
+   Ref:      5' gagaaaaatgacagggaaaaagGAGAAATTCT-CAATAAATGCG-GTAACTTAGAGATT--AGGATTGCGGAGAATAACAACCGCCGTTCTCATCGa 3'
+
+   Energy:  -54.520000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0005	156.00	-54.52	2 69	58 150	74	52.70%	58.11%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0005	342.00	-120.60	186.00	-66.08	5	90	300	 160 58
+Complete
+
+Read Sequence:b0006 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0006
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 158.000000  Q:3 to 89  R:124 to 211 Align Len (92) (50.00%) (58.70%)
+
+   Query:    3' ttTTCGGTCGTG-GGCCGACCGATTCATTATGACCTTCGTTACACTCG-TTACAGCACGAAAGTCCAAGAGGCGCTC----CCAGAAGGACTAGcg 5'
+                  :||: | |||  |  : | : || | || ||     || | |  || || |||| || |  |  ||: |:|| ||    || : | |||||:  
+   Ref:      5' agGAGTAATCACAACTATCGATCAACTCATTCT-----CATTTTTTGCTAAAGTCG-GCAT--AAATTTCCTGCAAGGACTGGATATGCTGATTct 3'
+
+   Energy:  -53.790001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0006	158.00	-53.79	3 89	124 211	92	50.00%	58.70%
+
+
+   Forward:	Score: 150.000000  Q:4 to 89  R:24 to 119 Align Len (94) (52.13%) (61.70%)
+
+   Query:    3' ttTTCGGTCG----TGGGCCGACCGATTCATTATGACCTTCGTTA--CACTCG--TTACAGCACGAAAGTC-CAAGAGGCGCTCCCAGAAGGACTAgcg 5'
+                  | ||||||    ||:||||  || :   ::|::| ||  || |  || | |  :|| ||| |:   |||  ||||||| || |  :    ||||   
+   Ref:      5' ctACGCCAGCGTAAACTCGGCGTGC-GCCCGGTGTTTGATCCATTGCGTTATCCGGATATCG-GTCGCCAGCTTTCTCCG-GACGCGTGGGATGATgtt 3'
+
+   Energy:  -71.000000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0006	150.00	-71.00	4 89	24 119	94	52.13%	61.70%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0006	308.00	-124.79	158.00	-71.00	6	90	300	 124 24
+Complete
+
+Read Sequence:b0007 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0007
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 164.000000  Q:3 to 89  R:166 to 265 Align Len (99) (50.51%) (59.60%)
+
+   Query:    3' ttTTCGGT--CGTGGGCCGACCGATTCATTATGACCTTCG--TTA---------CACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  |||:||  ||: |||||     :|| :||| || | ||  :||          | | :||   ||| |||| :||   || |: | | |:| |||| ||  
+   Ref:      5' gaAAGTCATCGCGACCGGCAATAAGAGGGATA-TGCATGCCAGATTTTTTCTCCTTCATTAACAGCGTCCTTTGGGG--ATCGGTAATGATTTACCTGCTCtt 3'
+
+   Energy:  -60.419998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0007	164.00	-60.42	3 89	166 265	99	50.51%	59.60%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0007	164.00	-60.42	164.00	-60.42	7	90	300	 166
+Complete
+
+Read Sequence:b0008 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0008
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 164.000000  Q:2 to 88  R:20 to 116 Align Len (96) (52.08%) (61.46%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGATTCATTATGACC-TTCGTTACACT--CGTTACAG-C---ACG-AAAGTCCAAGAGG--CGCTCCCAGAAGGACTAGCg 5'
+                   |||   ||:  ||:|  :|:  ||| | ||| ::||:|| | |  |||:|||| |   | |    |||  || ||  ||||    | | || :||| 
+   Ref:      5' cgtAGCATACATGAGGTT--TTGTATAAAAATGGCGGGCGATATCAACGCAGTGTCAGAAATCCGAAACAGTCTCGCCTGGCGATAACCGT-CTTGTCGg 3'
+
+   Energy:  -70.669998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0008	164.00	-70.67	2 88	20 116	96	52.08%	61.46%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0008	164.00	-70.67	164.00	-70.67	8	90	300	 20
+Complete
+
+Read Sequence:b0009 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0009
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 197.000000  Q:2 to 83  R:150 to 242 Align Len (87) (50.57%) (62.07%)
+
+   Query:    3' ttttcggtCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGC-AC-GA--AAGTCCAAGAGGCGCTCCCAG--AAGGACTAGCg 5'
+                        |:|:|   ||| :|||  :| ||||    :||   ||  ||| |:| ||  |  ||:| || :|   : ||  ||  | :||||||| 
+   Ref:      5' ttcgcagtGTATCATTCTGTTTAA-CGAGACTG--TTTAAACGGAAAAATCTTGATGAATACTTTACGTATTGGCTTAGTTTCCATCTCTGATCGc 3'
+
+   Energy:  -60.180000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0009	197.00	-60.18	2 83	150 242	87	50.57%	62.07%
+
+
+   Forward:	Score: 169.000000  Q:3 to 87  R:27 to 117 Align Len (87) (51.72%) (65.52%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTAC-ACTCGTTACAGCACGAAAGTCCAAGAG--GCGCTCCCAGAAGGACTAGcg 5'
+                    |: ||: : |  :|| | |:| || |||||||  |||| | :||:|| |  ||:  |||  ||||:  ||:||  |     : |:||  
+   Ref:      5' atccGTAAGTTTGCTATTGACCAGGAAAAACTGGAAAAAATGATCGGCGATCTGCTGTAATCA--TTCTTAGCGTGACCGGGAAGTCGGTCac 3'
+
+   Energy:  -65.849998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0009	169.00	-65.85	3 87	27 117	87	51.72%	65.52%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0009	366.00	-126.03	197.00	-65.85	9	90	300	 150 27
+Complete
+
+Read Sequence:b0010 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0010
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 191.000000  Q:2 to 86  R:162 to 247 Align Len (90) (54.44%) (66.67%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTT---A--CAGCACGA-AAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                     :|| ||::|  :| | |:| |:|| :| ||:| | | ||:||||   |  ||:| |||  || ||  | |||| :||     |||||| | 
+   Ref:      5' ttattTCACCATTC-ATTCGATGA-TGATTTTTGAGGAATTATGGGCAACACTAAGTTG-GCTAATCCGG--CACCGCTGGG-----CCTGATGGg 3'
+
+   Energy:  -60.340000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0010	191.00	-60.34	2 86	162 247	90	54.44%	66.67%
+
+
+   Forward:	Score: 150.000000  Q:3 to 88  R:28 to 122 Align Len (94) (46.81%) (57.45%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGA---AAG--TCCAAGAGGCGCTCCC----AGAAGGACTAGcg 5'
+                   :|::|||:||   | ||:    |:|||| |||| | : | ||  | | || | :|    ||  | | || : |  |  |     ||  |||||:  
+   Ref:      5' gatGGTTAGCGCCACTCAGGT---CTGATACCGGAAACCG-GGGAAAATTTTCATTTTCCCCTCAAAAGATCGTAGACACTGCCCCACTGGCTGATTat 3'
+
+   Energy:  -68.589996 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0010	150.00	-68.59	3 88	28 122	94	46.81%	57.45%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0010	341.00	-128.93	191.00	-68.59	10	90	300	 162 28
+Complete
+
+Read Sequence:b0011 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0011
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 165.000000  Q:2 to 89  R:40 to 140 Align Len (100) (52.00%) (59.00%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCA-TTATGACCTTCGTTACACTCGTTA-CAGC-ACG-AAAG-TCCAAGAGG-CGCTCCCAG-AAG------GACTAGCg 5'
+                  |||  :|||  |  ||| ||:: | || |:|   |||:||   : ||||   || ||| | || |   || ||  :  ||||| | |      || |||| 
+   Ref:      5' agAAG--GGCAAACCACTGACTGGATCAACATTAACAGCGATAACGACAATAAACGCTGCGTCTCAAAAATCACCTTTTCGGGTCATACGGTGAACTCATCGg 3'
+
+   Energy:  -62.389999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0011	165.00	-62.39	2 89	40 140	100	52.00%	59.00%
+
+
+   Forward:	Score: 159.000000  Q:2 to 84  R:204 to 285 Align Len (84) (53.57%) (60.71%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAG--AGGCGCTCCCAGAAGGACTAGCg 5'
+                       | :|||:|  || :| ||  || |||||  :  | | |||| ||| |||     |||  |  |: || |   ||  || |||:| 
+   Ref:      5' aatgttaATTACCTGAATGATTCAG--AT-CTGGATTTTCT-TCAGCATTGTAGTG-----AGGAACAGTTGGCAAATTTC-GCCCGATTGc 3'
+
+   Energy:  -59.540001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0011	159.00	-59.54	2 84	204 285	84	53.57%	60.71%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0011	324.00	-121.93	165.00	-62.39	11	90	300	 40 204
+Complete
+
+Read Sequence:b0013 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0013
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 171.000000  Q:4 to 88  R:154 to 250 Align Len (95) (52.63%) (62.11%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGATTCATTA---TGACCTTCGTTA-CACT-CGTTACAGCACGAAAGTCCAAGAGGCGCTC---CC---AGAAGGACTAgcg 5'
+                   ||: :|:|::|  |   |||  |  |   |||  :|| |||  | | | |||  |||  |||:| | |:||||| ||   ||   |:  ||||||   
+   Ref:      5' actAGTGGGTATTCATCCCCCTACCTCTTCCCACTAAGAG-AATCCTTATGAAAT-CCGT--TTTTACGATTTCCGCCAGCCTGGCGATTAGCCTGATgct 3'
+
+   Energy:  -59.970001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0013	171.00	-59.97	4 88	154 250	95	52.63%	62.11%
+
+
+   Forward:	Score: 145.000000  Q:3 to 89  R:9 to 96 Align Len (90) (51.11%) (58.89%)
+
+   Query:    3' ttTTCGGTCG-TGGGCCGACCGATT---CATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  || :: || |: :||| ||  ||   |||| |:||  |||||| | | : || |   |  |   |  || | || | || |   :| |||  
+   Ref:      5' gaAATTTCGCGATATGGCAGGACAAGACGTAAAATTGACAGCAATTTTATTCATATAAAGAAT---GAATCGCAGCCAAGG-C--ATTCATCaa 3'
+
+   Energy:  -51.470001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0013	145.00	-51.47	3 89	9 96	90	51.11%	58.89%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0013	316.00	-111.44	171.00	-59.97	12	90	300	 154 9
+Complete
+
+Read Sequence:b0014 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0014
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 143.000000  Q:2 to 84  R:184 to 275 Align Len (88) (50.00%) (63.64%)
+
+   Query:    3' ttttcggTC-GTGGGCCGACCGATTCATTA-TGACCTTCGTTACACTCGTTACAG--CACGA-AAGTCCAAGAGGCGCTCCCAGAAG-GACTAGCg 5'
+                       || |:::: | ||| |||  ||| |:||| | |:|  ||:|:| |  |   | :| | :||   :| :| || || |  | ||  ||| 
+   Ref:      5' atagtggAGACGTTTAGATGGGTAA--AATAATTGGTATCGACCTGGGTACTACCAACTCTTGTGTAGCGATTATG-GATGG-CACCACTCCTCGc 3'
+
+   Energy:  -60.500000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0014	143.00	-60.50	2 84	184 275	88	50.00%	63.64%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0014	143.00	-60.50	143.00	-60.50	13	90	300	 184
+Complete
+
+Read Sequence:b0015 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0015
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 150.000000  Q:2 to 86  R:11 to 116 Align Len (100) (52.00%) (59.00%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTC-ATTAT---GACCTTCGTTACACTCGTTACAGC-ACGAAAG-TCCAAGAGGCGCTCC--CAG---AAG-----GACTAGCg 5'
+                     |||||| | | ||| | : | |:||:   ||| || ||| | ||  :||| || ||:| || | | |   : :|| |  |||     |      | |||| 
+   Ref:      5' catgcCCAGCAGCAGACTGCCGGTGCTGATGCTTCTGCAAACAACGCGAAAGATGACGATGTTGTCGACGCTGAATTTGAAGAAGTCAAAGACAAAAAATAATCGc 3'
+
+   Energy:  -63.599998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0015	150.00	-63.60	2 86	11 116	100	52.00%	59.00%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0015	150.00	-63.60	150.00	-63.60	14	90	300	 11
+Complete
+
+Read Sequence:b0016 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0016
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 152.000000  Q:4 to 89  R:110 to 187 Align Len (85) (48.24%) (58.82%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAgcg 5'
+                  | || ||||||:     |: ||||:  :| ||:| || |   | :||   |   |||  :||||    |:|:   |   ||||||   
+   Ref:      5' atATGCGAGCACCT-----GTAAAGTG--GCGGGGATCACTCCCA-TAAGCGCTAACTTAAGGGTT----GTGGTATTACGCCTGATatg 3'
+
+   Energy:  -63.930000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0016	152.00	-63.93	4 89	110 187	85	48.24%	58.82%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0016	152.00	-63.93	152.00	-63.93	15	90	300	 110
+Complete
+
+Read Sequence:b0018 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0018
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 217.000000  Q:2 to 84  R:211 to 295 Align Len (85) (55.29%) (64.71%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATT--CATTATGACCTTCGTTACACTCGTTACAGC-ACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                       ||::||:  ||  ||:|  |||| : |  |:| :| | ||||||||  |  ||  | |||    |  :||  |||  |||||||| 
+   Ref:      5' catgtagAGTGCCT--CTTACTGACCGTAA-GGTCAAGGAGAAGAGAGCAATGAAGCAGC-ATAAGG----CGATGATTGTCGCCCTGATCGt 3'
+
+   Energy:  -73.690002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0018	217.00	-73.69	2 84	211 295	85	55.29%	64.71%
+
+
+   Forward:	Score: 182.000000  Q:2 to 86  R:48 to 147 Align Len (96) (51.04%) (60.42%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTA--------CAG--CACGAAAGTCCAAGAGGC--GCTCCCAGAAGGACTAGCg 5'
+                     :||| |:: |  | | |||   | | ||| : :|| | ||||:||        | |  |||| || ||| | ||:|  : |||  :|  |||| || 
+   Ref:      5' cgtctTCAGGATTAGAATCGATAAAACAAAATGG-GTTAAAGAGAGCGATATAATAGCGGCGGGTGC-TTGAGGCTGTCTGTCTCAGGCATTAGCTGAACGg 3'
+
+   Energy:  -66.889999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0018	182.00	-66.89	2 86	48 147	96	51.04%	60.42%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0018	399.00	-140.58	217.00	-73.69	16	90	300	 211 48
+Complete
+
+Read Sequence:b4412 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b4412
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 217.000000  Q:2 to 84  R:154 to 238 Align Len (85) (55.29%) (64.71%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATT--CATTATGACCTTCGTTACACTCGTTACAGC-ACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                       ||::||:  ||  ||:|  |||| : |  |:| :| | ||||||||  |  ||  | |||    |  :||  |||  |||||||| 
+   Ref:      5' catgtagAGTGCCT--CTTACTGACCGTAA-GGTCAAGGAGAAGAGAGCAATGAAGCAGC-ATAAGG----CGATGATTGTCGCCCTGATCGt 3'
+
+   Energy:  -73.690002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b4412	217.00	-73.69	2 84	154 238	85	55.29%	64.71%
+
+
+   Forward:	Score: 180.000000  Q:2 to 70  R:1 to 90 Align Len (72) (54.17%) (66.67%)
+
+   Query:    3' ttttcggtcgtgggccgaccgATTCATTATGACCTTCGTTACA--CTCGTTACAGCACGAAAGTCCAAGAGGC--GCTCCCAGAAGGACTAGCg 5'
+                                     |::||  ||  | :|||:|| |   |||:: |  |||| || ||| | ||:|  : |||  :|  |||| || 
+   Ref:      5' attagaatcgataaaacaaaaTGGGT--TAAAGAGAGCGATATAATAGCGGCG-GGTGC-TTGAGGCTGTCTGTCTCAGGCATTAGCTGAACGg 3'
+
+   Energy:  -65.669998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b4412	180.00	-65.67	2 70	1 90	72	54.17%	66.67%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b4412	397.00	-139.36	217.00	-73.69	17	90	300	 154 1
+Complete
+
+Read Sequence:b0019 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0019
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 170.000000  Q:3 to 89  R:166 to 259 Align Len (93) (53.76%) (61.29%)
+
+   Query:    3' ttTTCGGTCG-TGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGC-ACGAAA--GTC-C-AAGAGGCGCTCC-CAGAAGGACTAGcg 5'
+                  || | | | |::|  |||   :|| ||||    : | ||  |  |||   ||| | ||||  ||| | | | :|| ||||  |: |:|| |||  
+   Ref:      5' aaAAACGATCTATTCACCTGAAAGAGAAATAAAAAGTGAAACATCTGCA---TCGATTCTTTAGCAGTGATGCCTCGGGAGGCATTATTCTTATCat 3'
+
+   Energy:  -54.080002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0019	170.00	-54.08	3 89	166 259	93	53.76%	61.29%
+
+
+   Forward:	Score: 152.000000  Q:2 to 72  R:1 to 80 Align Len (74) (51.35%) (58.11%)
+
+   Query:    3' ttttcggtcgtgggccgacCGATTCATTAT-GACCTTCGTTACACTCGTTACAGCACGAAAGTC--CAAGAGGCGCTCCCAGAAG-GACTAGCg 5'
+                                   |||| | | || || |:  :|: || | : :||  | |||| |||  ||      ||    ||  | ||||| | 
+   Ref:      5' ------------accttaaGCTATG-ATTATCTAGGCTTAGGGTCACTCGTG-AGCGCTTACAGCCGTCAAAAACGCATCTCACCGCTGATGGc 3'
+
+   Energy:  -59.869999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0019	152.00	-59.87	2 72	1 80	74	51.35%	58.11%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0019	322.00	-113.95	170.00	-59.87	18	90	300	 166 1
+Complete
+
+Read Sequence:b0020 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0020
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 161.000000  Q:5 to 89  R:57 to 145 Align Len (87) (50.57%) (68.97%)
+
+   Query:    3' ttTTCGGTCGT-GGGCCGACCGATTCATTATGA-CCTTCGTTACACTCGTTACAGCACGAAAGTCCAAG-AGGCGCTCCCAGAAGGACTagcg 5'
+                  || :|:|:| ||:||: ||:|   |  | :| || :|:||| ||: :|  | | || || |: |||| |::|||    ||  ::|||    
+   Ref:      5' gaAACTCGGTATCCTGGTCGGTTCTAT-CTCTTCGGCGGTAAT-TGGATACAG-C-TGGTTACGCGTTCGTTTGCGTCCATCAGTTTGAcagg 3'
+
+   Energy:  -64.010002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0020	161.00	-64.01	5 89	57 145	87	50.57%	68.97%
+
+
+   Forward:	Score: 158.000000  Q:5 to 89  R:157 to 249 Align Len (90) (54.44%) (63.33%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCG---ATTCATTAT-GACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAG-AGGCGCTCCCAG-AAGGACTagcg 5'
+                  :||||| :|  |||||  |   | | |: || | ||:|| :|  ||||| ||||| |  | |||  | |  || |  |  |:  |:|||:    
+   Ref:      5' ggGAGCCA-TAAACGGCTCCCTTTTCATTGTTATCAGGGAGAGAAATGAGC-ATGTC-TCATATCAATTACAACCACTTGTATTACTTCTGGcatg 3'
+
+   Energy:  -65.660004 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0020	158.00	-65.66	5 89	157 249	90	54.44%	63.33%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0020	319.00	-129.67	161.00	-65.66	19	90	300	 57 157
+Complete
+
+Read Sequence:b0021 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0021
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 140.000000  Q:3 to 86  R:18 to 106 Align Len (88) (50.00%) (59.09%)
+
+   Query:    3' ttttcGGTCG-TGGGCCGACCGATTCATTATGACCTTCGTTA-CACTCGTTACAG--CACG-AAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                     :|||| ::||  |  |:| ||   |||| || | ::| ||| |:|| | |    ||    | ||   || ||   | | | :||| ||  
+   Ref:      5' ttctaTCAGCTGTCCCTCCTGTTCAG--CTACT-GACGGGGTGGTGCGTAACGGCAAAAGCACCGCCGGACATCAGC---GCTATCTCTGCTCtc 3'
+
+   Energy:  -59.540001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0021	140.00	-59.54	3 86	18 106	88	50.00%	59.09%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0021	140.00	-59.54	140.00	-59.54	20	90	300	 18
+Complete
+
+Read Sequence:b0022 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0022
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 189.000000  Q:3 to 89  R:148 to 237 Align Len (87) (50.57%) (63.22%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCAT-TATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  | ||:: || |:  ||| :| |||: ||: ||| : :  || | |:: |   |||  ||| | |||| :  |  |  | ||||| ||  
+   Ref:      5' tgATGCTGCCAACTTACTGATTTAGTGTATGATGGTGTTTTTGAG-GTGCTCCAGTGGCTTCTGTTTCTATCAGCTGTCCCTCCTGTTCag 3'
+
+   Energy:  -67.400002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0022	189.00	-67.40	3 89	148 237	87	50.57%	63.22%
+
+
+   Forward:	Score: 144.000000  Q:4 to 69  R:1 to 70 Align Len (69) (55.07%) (59.42%)
+
+   Query:    3' ttttcggtcgtgggccgaccgaTTCATTATG--ACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAG--GACTAgcg 5'
+                                      :||  ||:|  | | | | || ||| |  | |||||  || ||  |   ||: ||   | ||  |||||   
+   Ref:      5' ------------------aaaaGAGACATGCCGTTGTA-CTATCTGAACTCT-TCGTGGCTTAAGAAT---CGT-AGAACCATCGGCTGATaca 3'
+
+   Energy:  -47.799999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0022	144.00	-47.80	4 69	1 70	69	55.07%	59.42%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0022	333.00	-115.20	189.00	-67.40	21	90	300	 148 1
+Complete
+
+Read Sequence:b0023 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0023
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 141.000000  Q:2 to 88  R:200 to 287 Align Len (90) (48.89%) (60.00%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTC-CCA--GAAGGACTA-GCg 5'
+                   :||:| :|:|   :  |||||| |: :|   |  ||:| |||  || |    |||  :| |  |  ||| ||  ||  || : |||| || 
+   Ref:      5' cttGGCTAATATCAAATCAGCTAAGAAGCGCGCCATTCAGTCTGA--AAAG----GCTCGTAAGCACAACGCAAGCCGTCGCTCTATGATGCGt 3'
+
+   Energy:  -56.130001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0023	141.00	-56.13	2 88	200 287	90	48.89%	60.00%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0023	141.00	-56.13	141.00	-56.13	22	90	300	 200
+Complete
+
+Read Sequence:b0024 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0024
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 160.000000  Q:2 to 66  R:1 to 67 Align Len (69) (56.52%) (63.77%)
+
+   Query:    3' ttttcggtcgtgggccgaccgattcATTA-TGACCTTCGTTACA-CTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAG---GACTAGCg 5'
+                                         |:|| |  | | |||   | ||||:| | | ||| ||   || || : ||||  |:|||   |||| :| 
+   Ref:      5' ------------------------tTGATGAAAGTACGCATCATAGAGCGACGGCTTGCGTT---GTGCT-TACGAGCCTTTTCAGACTGAATGg 3'
+
+   Energy:  -52.779999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0024	160.00	-52.78	2 66	1 67	69	56.52%	63.77%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0024	160.00	-52.78	160.00	-52.78	23	90	300	 1
+Complete
+
+Read Sequence:b0025 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0025
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 177.000000  Q:2 to 88  R:58 to 156 Align Len (96) (53.12%) (64.58%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGA-TTCATTATGAC-C--T-TCGTTAC-ACTCGTTACAGCACGA--AAGTCCAAGAG-GCGCTCCCAG-AAGGACTAGCg 5'
+                   ||| :||: :| |:|  :|   ||:|| :|| |  | :||||||   ||| |  || | ||  ||: ||| |||   ||  |||:   |:||| || 
+   Ref:      5' tgcAGCAGGCGGTCAGTTTCTTCCCGTGAT-TTGCGCCATGGCAATGAAAAGCCACTTCTTTCTGATTTCGGTACTCAATCGCCGGTTAACCTTGACCGc 3'
+
+   Energy:  -70.910004 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0025	177.00	-70.91	2 88	58 156	96	53.12%	64.58%
+
+
+   Forward:	Score: 152.000000  Q:2 to 89  R:202 to 299 Align Len (96) (50.00%) (61.46%)
+
+   Query:    3' ttTTCGGTCGTGGGCCG-ACCGATT-CATTATGACC--TTCGTTACACTCGTTACAGCAC-GAAAGTCCAAGAGGC-GCTCCCAGAAG---GACTAGCg 5'
+                  ||||:: :|| |||| |   |||  | |  | ||    ||||   |:|: :|||  || || |::|   :|:|| ||: |  | ||    | |||| 
+   Ref:      5' tgAAGCTGATACGCGGCATACATAATCTCAGCCAGGCCCCGCAAGAAGGGT-GTGTGCTGACTATTGGTAATTTCGACGGCGTGCATCGCGGTCATCGc 3'
+
+   Energy:  -72.120003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0025	152.00	-72.12	2 89	202 299	96	50.00%	61.46%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0025	329.00	-143.03	177.00	-72.12	24	90	300	 58 202
+Complete
+
+Read Sequence:b0026 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0026
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 156.000000  Q:2 to 87  R:21 to 106 Align Len (90) (54.44%) (61.11%)
+
+   Query:    3' ttttCGGTCGTG-GGCCGAC-CGATTCATTATGACCTTCGTTACAC-TCGTTACA-GCA-CGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                    |||| :|: |  |: | |||: |||| |    | |||||| | |||:|| | ||| || |  | |  ||  |  || |     | |||:| 
+   Ref:      5' ggtcGCCA-TATACAAGTAGTGCTGCGTAAAAAAATACGCAATGAGCAGCGATTTGCGTCGC-TGGACGAACT--GAAAGCG-----CAGATTGc 3'
+
+   Energy:  -64.599998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0026	156.00	-64.60	2 87	21 106	90	54.44%	61.11%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0026	156.00	-64.60	156.00	-64.60	25	90	300	 21
+Complete
+
+Read Sequence:b0027 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0027
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 200.000000  Q:3 to 89  R:201 to 292 Align Len (91) (49.45%) (64.84%)
+
+   Query:    3' ttTTCGGTCG--TGGGCCGACCGATTCATTATGACCTTCGTT-ACACTCGTTACAGCACGA--AAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  :||:|| :  |:|:| :   | ::|  | :||||  |::: ||  :|:|  ||||||||  ||   | |||  || ||    | |||||||  
+   Ref:      5' atGAGTCAATCGATCTGTTCAACAGGGCTACGCTGGCTGTGGCTGGTGGTA--GTCGTGCTGATTATCGATCTGGGC-AGCAAATACCTGATCct 3'
+
+   Energy:  -72.300003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0027	200.00	-72.30	3 89	201 292	91	49.45%	64.84%
+
+
+   Forward:	Score: 188.000000  Q:4 to 89  R:111 to 205 Align Len (92) (55.43%) (60.87%)
+
+   Query:    3' ttTTCGGTCG-TGGGCCGAC---CGATTCATTATGA--CCTTCGTTACACTCGTTACAGCACGAAAGT-CCAAGAGGCGCTCCCAGAAGGACTAgcg 5'
+                  | |:|:|| |  :||| |    |  || ||| ||  ||  || :||| ||||| ||||  |  | | |||      ||   ||:| ||||||   
+   Ref:      5' ggATGTCGGCAAGGTGGCGGAACACGCAGAAAT-CTGCGGCCGCTGTGTCAGCAACGTCG-CCGGTGACGGTGAAAAACGTAAGTTTGCCTGATgag 3'
+
+   Energy:  -77.250000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0027	188.00	-77.25	4 89	111 205	92	55.43%	60.87%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0027	388.00	-149.55	200.00	-77.25	26	90	300	 201 111
+Complete
+
+Read Sequence:b0028 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0028
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 157.000000  Q:4 to 70  R:56 to 150 Align Len (71) (59.15%) (61.97%)
+
+   Query:    3' ttttcggtcgtgggccgaccgATTCATTATGACCTTCGTTAC-ACT-CGT--TACAGCACGAAAGTCCAA-GAGGCGCTCCCAGAAGGACTAgcg 5'
+                                     |||    |:| ||| ||:||| ||| |||   | ||  || | ||| || || ||  |  ||   || |||   
+   Ref:      5' tctagagcgaaaaaacaataaTAAACCCTGCCGGATGCGATGCTGACGCATCTTATCCGGCCTACAGATTGCTGCGAAATCGTAGGCCGGATaag 3'
+
+   Energy:  -75.790001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0028	157.00	-75.79	4 70	56 150	71	59.15%	61.97%
+
+
+   Forward:	Score: 157.000000  Q:4 to 89  R:155 to 241 Align Len (93) (56.99%) (59.14%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACG-AAAGTCCAAGA---GGCGC----TCCCAGAAGGACTAgcg 5'
+                  | ||| |||:|||||     ||  ||| ||  ||   ||  ||||||   | ||| | || |  |||   | | |    || | | |||||:|   
+   Ref:      5' ttACGCC-GCATCCGGC-----AA-AAATCCTTAAA--TATAAGAGCAA--ACCTGCATGTCTGAATCTGTACAGAGCAATAGCGCCGTCCTGGTgca 3'
+
+   Energy:  -63.270000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0028	157.00	-63.27	4 89	155 241	93	56.99%	59.14%
+
+
+   Forward:	Score: 150.000000  Q:2 to 65  R:1 to 65 Align Len (69) (56.52%) (68.12%)
+
+   Query:    3' ttttcggtcgtgggccgaccgattcaTTATGACCTTCGTTA----CAC-TCGTTAC-AGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                                          :||||||  | | :|    ||| :||| || |:|||||   |||||:|::||      ||||: || || 
+   Ref:      5' -------------------------cGATACTGCCATCTGTGTCGGTGCGGCACTGATTGTGCTGGAAGGTTTTTTGC------CTTCTAGAGCGa 3'
+
+   Energy:  -64.830002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0028	150.00	-64.83	2 65	1 65	69	56.52%	68.12%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0028	464.00	-203.89	157.00	-75.79	27	90	300	 56 155 1
+Complete
+
+Read Sequence:b0029 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0029
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 160.000000  Q:3 to 86  R:119 to 211 Align Len (91) (54.95%) (60.44%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGT---CCAAGAGGCG--CTCC-CA--GAAGGACTAGcg 5'
+                     | | ||:|| |||||| ::| |: || |    || | ||| :| ||  |||||   |   | | |  | |  |||| ||  | | | ||||  
+   Ref:      5' gatttCAACCATCC-GCTGGCCGGGCAG-ACCG--TTCATTTTGA-TATTGAAGTGCTGGAAATCGATCCGGCACTGGAGGCGTAACATGCAGATCct 3'
+
+   Energy:  -69.510002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0029	160.00	-69.51	3 86	119 211	91	54.95%	60.44%
+
+
+   Forward:	Score: 153.000000  Q:3 to 89  R:21 to 124 Align Len (101) (52.48%) (60.40%)
+
+   Query:    3' ttTTCGGTCGTGGGCCG----A--CCGATTCAT--TATGACCT-TCGTTACACT-CGTTACAGCACGA-AAG-TCCAAGAGGCGCTCCCAGAA--G-GACTAGcg 5'
+                  :|||||| | ::|||    |   |||   ||  : | |||| :|||:|| || ||  || |||| |   | |  ||  | ||||     ||  | :||||:  
+   Ref:      5' gcGAGCCAGAAATTGGCGCAATCATGCTTTTTACCGCAATGGATGGCAGTGAGATGC-CTGGCGTGATCCGCGAAATTAACGGCGACTCCATTACCGTTGATTtc 3'
+
+   Energy:  -73.320000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0029	153.00	-73.32	3 89	21 124	101	52.48%	60.40%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0029	313.00	-142.83	160.00	-73.32	28	90	300	 119 21
+Complete
+
+Read Sequence:b0030 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0030
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 155.000000  Q:2 to 85  R:25 to 116 Align Len (90) (56.67%) (63.33%)
+
+   Query:    3' ttttcgGTCGT-GGGCCG--ACCGATTCATTA---TGACCTTCGTTACACTCGTTACAGCACGAAAG-TCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                      ||||| |: |||  |||: |||  ||   :||||||| :  ||||  ||     ||:|||| | ||   |||  || | | | |  :||| 
+   Ref:      5' cgtttgCAGCAGCTGGGCGGTGGTGAAGCCATTCCGCTGGAAG-GCCGTGAAGAAAACATTGTTTTCGAAGT--GCCGAAAGAG-C-TGCGTGTCGa 3'
+
+   Energy:  -67.940002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0030	155.00	-67.94	2 85	25 116	90	56.67%	63.33%
+
+
+   Forward:	Score: 141.000000  Q:4 to 89  R:195 to 300 Align Len (102) (46.08%) (57.84%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCA-TTATGACCTTCGTTACACTCGTTACAGCA-CG--AAAGTC----CAAGAGGC----GCT---CCCAGAAG--GACTAgcg 5'
+                  || |  ||::::  ||  ||   | :||||||    |::  | : |:||| ||| ||  || | |    | |:|::|    |||    |  || |  |||||   
+   Ref:      5' gaAAACATGCGTTTACCTATCTTCCTCGATACTGACCCCGGCATTGACGATGCCGTCGCCATTGCCGCCGCGATTTTTGCACCCGAACTCGACCTGCAACTGATga- 3'
+
+   Energy:  -61.490002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0030	141.00	-61.49	4 89	195 300	102	46.08%	57.84%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0030	296.00	-129.43	155.00	-67.94	29	90	300	 25 195
+Complete
+
+Read Sequence:b0031 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0031
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 175.000000  Q:4 to 78  R:1 to 91 Align Len (88) (54.55%) (65.91%)
+
+   Query:    3' ttttcggtcgtggGCCGACCGA-TTCATTAT---GACCTT--CGTTACACTCGT-TACAGCA--CGAAAGTC--CAAGAGGC--GCTCCCAGAAG-GACTAgcg 5'
+                             :|| ||||| |:||: |:   |||| :  |:||  ||  || ||||: |  || | |||   ||| :||  : | |  :||| |||||   
+   Ref:      5' ------------gTGGGTGGCTGAGGTGCTGGCTCTGGCGTCGTAACCTG-TCACATGTTATTGGCATGCAGTCATTCATCGACTCATGCCTTTCACTGATatc 3'
+
+   Energy:  -67.610001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0031	175.00	-67.61	4 78	1 91	88	54.55%	65.91%
+
+
+   Forward:	Score: 153.000000  Q:5 to 87  R:82 to 169 Align Len (86) (51.16%) (63.95%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGAT--TCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTC-CA-AGAGGCGCTCCCAGAAGGACTagcg 5'
+                    | :| | ||:  ||| :||  | |||| :|  || :|   | |||: | |:| |||  |:| ||  |  :|||  |||:  :||||    
+   Ref:      5' cactGATATC-CCTCCCTGTTTATCATTAAT-TTCTAATTA---TCAGCGTTTTTG-GCTGGCGGCGTAGCGATGCGCTGGTTACTCTGAaaac 3'
+
+   Energy:  -58.080002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0031	153.00	-58.08	5 87	82 169	86	51.16%	63.95%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0031	328.00	-125.69	175.00	-67.61	30	90	300	 1 82
+Complete
+
+Read Sequence:b0032 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0032
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 207.000000  Q:3 to 89  R:120 to 208 Align Len (90) (58.89%) (68.89%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACC--GATTCATTA-TGAC-CTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  ||| ||| |:::|  | |  :|| || || |:|| ||| :||| ||   |||   |||  |  |  |||||:| |||||| || :||||:  
+   Ref:      5' gtAAG-CAG-ATTTGCATTGATTTACGTCATCATTGTGAATTAATATG-CAAATAAAGTGAGTGAATATTCTCTG-GAGGGTGTT-TTGATTaa 3'
+
+   Energy:  -72.779999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0032	207.00	-72.78	3 89	120 208	90	58.89%	68.89%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0032	207.00	-72.78	207.00	-72.78	31	90	300	 120
+Complete
+
+Read Sequence:b0033 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0033
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 179.000000  Q:3 to 86  R:22 to 114 Align Len (87) (50.57%) (62.07%)
+
+   Query:    3' ttttcGGTCGTG-GGCCGACCGAT-TCAT-TATG-ACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                     || |: |  |||:  |:|| || : || | | | | |:||   | |::  |:  |||| ||||  | || :|| |     ||||:||  
+   Ref:      5' aaatcCCTGTTCGACGGTACGTTACAGGGCATTCATCGCACCGAT-AAACCGGCATTCAGCTTCCAGGGGCACCCTGAAGCCAGCCCTGGTCca 3'
+
+   Energy:  -70.339996 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0033	179.00	-70.34	3 86	22 114	87	50.57%	62.07%
+
+
+   Forward:	Score: 171.000000  Q:3 to 89  R:155 to 238 Align Len (89) (55.06%) (60.67%)
+
+   Query:    3' ttTTCGGTCGTGG--GCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAG-CACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  :|| |||:|||        |||||||||| | || ||:||   |||| ||| |    | | ||| | :      |  ||  |||||||:  
+   Ref:      5' ttGAG-CAGTACCGTAAAACCGCTAAGTAAT-CAGG-AGTAA-AAGAGCCATGCCAAAACGTACAGATAT----AAAAAGT-ATCCTGATTct 3'
+
+   Energy:  -56.549999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0033	171.00	-56.55	3 89	155 238	89	55.06%	60.67%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0033	350.00	-126.89	179.00	-70.34	32	90	300	 22 155
+Complete
+
+Read Sequence:b0034 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0034
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 165.000000  Q:2 to 89  R:158 to 244 Align Len (92) (52.17%) (61.96%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATT---CATTATGACCTT-CGT-TACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  :||:||  :|| | ||  :|||   ||:| ||||||:  |: ||||| | || | : ||  || |    |  | | |    ||| :| |||| 
+   Ref:      5' acGAGTCATAGCCAGACT-TTTAATTTGTGAAACTGGAGTTCGTATGTGTG-AAGGATATG--TTGAAAAACCACTCTA----CTTGTTAATCGc 3'
+
+   Energy:  -61.230000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0034	165.00	-61.23	2 89	158 244	92	52.17%	61.96%
+
+
+   Forward:	Score: 155.000000  Q:2 to 89  R:4 to 93 Align Len (95) (47.37%) (57.89%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCG---ATTCATTATGA-----CCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  |:| | |: :::  :|| |   |||||||  ||     |||| |:|| |   ::||| | |     |||| |:|     | | ||   || |||| 
+   Ref:      5' tgAGGACCGTTTTTTTTTGCCCATTAAGTAAATCTTTTGGGGAATCGATATTTTTGATGACAT--AAGCAGGATTT-----A-GCTCACACTTATCGa 3'
+
+   Energy:  -52.410000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0034	155.00	-52.41	2 89	4 93	95	47.37%	57.89%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0034	320.00	-113.64	165.00	-61.23	33	90	300	 158 4
+Complete
+
+Read Sequence:b0035 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0035
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 177.000000  Q:2 to 89  R:201 to 280 Align Len (87) (49.43%) (63.22%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  :|||:| :|| |  :||   :: |||| | || :|:    | | |   | || || ||:  || | :| | || | | ||:||||:| 
+   Ref:      5' gtGAGCTATTACGCCTTTGAGGGGTTAATTCCGGTGGT----TCACC--CGACG-GCGTTT--GTCCATC-CCAGTGCCGTCTTGATTGg 3'
+
+   Energy:  -66.720001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0035	177.00	-66.72	2 89	201 280	87	49.43%	63.22%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0035	177.00	-66.72	177.00	-66.72	34	90	300	 201
+Complete
+
+Read Sequence:b0036 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0036
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 183.000000  Q:2 to 89  R:160 to 260 Align Len (100) (51.00%) (59.00%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACC----TTCGTTA--CACTCGTTACAG--CAC-GAAAGT--CCAAG--AGGCGCTCCCAGAAGGACTAGCg 5'
+                  | |::: |::||  |||   ||| || | |||    ||| |||  |||| : ||  |   || |   ||  || ||  |:|  ||   |   |:|||||| 
+   Ref:      5' ggATGTTGTCGTCC--CTGAAAAAGCAAAAATGGAGAAAAGGAATGAGTGAATCATTACATCTGACCCGCAATGGATCAATTCTGGAAATTACCCTTGATCGt 3'
+
+   Energy:  -62.939999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0036	183.00	-62.94	2 89	160 260	100	51.00%	59.00%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0036	183.00	-62.94	183.00	-62.94	35	90	300	 160
+Complete
+
+Read Sequence:b0037 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0037
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 157.000000  Q:3 to 87  R:194 to 283 Align Len (89) (49.44%) (61.80%)
+
+   Query:    3' ttttCGGT-CGTGGGCCGACCGATTCATTAT-GACCTTCGTTACACTC-GTTACAGCAC--GAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                    || | | |: :  :|||| :|  || | ||  :   ||||||:| |:|| |:| |  | ||:| | ||  :   | || |   |||||:  
+   Ref:      5' aggtGCAATGGATATCATTGGCGGA-CAACATCTACGTCAAATGTGGGACGATCTTGCGGACGTTTACGGTC-ATAAAACGG-C--GCTGATTtg 3'
+
+   Energy:  -60.240002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0037	157.00	-60.24	3 87	194 283	89	49.44%	61.80%
+
+
+   Forward:	Score: 141.000000  Q:5 to 85  R:64 to 158 Align Len (89) (51.69%) (59.55%)
+
+   Query:    3' ttttcgGTCG--TGGGCCGACCGATTCATTATGACC-TTCGTT---ACACTCGTTACAGC-ACGAAAGTCCAAGAGGCGCTC--CCAGAAGGACTagcg 5'
+                      ||||  |  || |   :| || |:|  |||  |||||   | ||: ||| ||:|  |  |  | |  :  ||: ||  || :| |||||    
+   Ref:      5' cggctaCAGCGAAAACGAC--ATTCAGGAGT--TGGTCAGCAAAGGTCTGGCCAAAGTTGAGGACTAAACGCGTGGCGTCAGTCGGCTTGCCTGActag 3'
+
+   Energy:  -71.029999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0037	141.00	-71.03	5 85	64 158	89	51.69%	59.55%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0037	298.00	-131.27	157.00	-71.03	36	90	300	 194 64
+Complete
+
+Read Sequence:b0038 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0038
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 182.000000  Q:3 to 89  R:22 to 113 Align Len (93) (58.06%) (63.44%)
+
+   Query:    3' ttTTCGGTCGTGGGC--CGACCGA-TTCATTATGACCTTCGTTACACTCGTTACA-GCA--CGAAAGTCCAAGAGGCG-CTCCCAGAAGGACTAGcg 5'
+                  ||  |||  ||:|  ||||| | : | ::|:|| ||||||||    || | || |||  |||  | | | |  ||| || |  | | || |||  
+   Ref:      5' gaAATGCAGATCCTGACGCTGGGTCGTGCGGTGCT-GAAGCAAT-ACCGCTAAGTCCGTGCGCTGCCTGATGCGACGCTGATG--CGT-CTTATCag 3'
+
+   Energy:  -75.419998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0038	182.00	-75.42	3 89	22 113	93	58.06%	63.44%
+
+
+   Forward:	Score: 157.000000  Q:2 to 89  R:150 to 246 Align Len (97) (51.55%) (59.79%)
+
+   Query:    3' ttTTCGGTCGTGGGCCG-----AC-CGATTCATT--ATGA-CCTTCGTTACACTCGTTA-CAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  | ||| |||:|||||     || ||||  |||  | :|  |:|||||  | |  :||  ||   |  |   |   |:|| |:  ||:  || |||:| 
+   Ref:      5' ttACGCC-GCATCCGGCAGTCATGCGCTACATAAATTTTTCAGGAGCAA-ATAATGGATCATCTACCCATGCCGAAATTCG-GGCCGTTGGCCGGATTGc 3'
+
+   Energy:  -67.919998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0038	157.00	-67.92	2 89	150 246	97	51.55%	59.79%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0038	339.00	-143.34	182.00	-75.42	37	90	300	 22 150
+Complete
+
+Read Sequence:b0039 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0039
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 171.000000  Q:2 to 89  R:178 to 262 Align Len (92) (52.17%) (60.87%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCG--TTAC-ACTCGTTACAGCACGAA-AGT-CCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  ||  :| ||   ||:||   |||  : |:|  || :  |||| ||||||: |   ||:|| ||:  | | |||||||        ||||| | 
+   Ref:      5' ccAAAATATCAAGAGGTTG--AAAGATGGATTTTAATTTAAATGATGAGCAG-GAACTGTTTGTCGCCGGTATCCGCGA-------ACTGATGGc 3'
+
+   Energy:  -64.620003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0039	171.00	-64.62	2 89	178 262	92	52.17%	60.87%
+
+
+   Forward:	Score: 156.000000  Q:3 to 73  R:1 to 73 Align Len (71) (53.52%) (64.79%)
+
+   Query:    3' ttttcggtcgtgggccgaCCGATTCATTATGACC-TTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                                  ||:|::  ||| ||||  :||| | | :|:| |||: ||||    ||  ||| ||| |  |    | |||:  
+   Ref:      5' -------------gtatcGGTTGGTCAATTCTGGTTGGCATTATCGGTATTGTTCTGCT----GGCGCTCGGCG-GCCTGAAACCGATTca 3'
+
+   Energy:  -61.369999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0039	156.00	-61.37	3 73	1 73	71	53.52%	64.79%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0039	327.00	-125.99	171.00	-64.62	38	90	300	 178 1
+Complete
+
+Read Sequence:b0040 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0040
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Score for this Scan:
+No Hits Found above Threshold
+Complete
+
+Read Sequence:b0041 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0041
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 150.000000  Q:2 to 69  R:182 to 269 Align Len (69) (53.62%) (59.42%)
+
+   Query:    3' ttttcggtcgtgggccgaccgaTTCATTATGACCTTCGTTACACTCGTTACAGCACGA-AAGTCCAAGAGGCGCT-CCCAGAAGGACTAGCg 5'
+                                      ||| | ||:|    || ||  | || :|| | || |   |||| | | :|||:    |  | ||||| | 
+   Ref:      5' catgatttctggagatgcaatgAAG-ATTATTACTTGCTATAAGTGC-GTG-CCTGATGAACAGGATAT-TGCGGTCAATAATGCTGATGGt 3'
+
+   Energy:  -61.650002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0041	150.00	-61.65	2 69	182 269	69	53.62%	59.42%
+
+
+   Forward:	Score: 145.000000  Q:4 to 87  R:20 to 110 Align Len (91) (50.55%) (62.64%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATTCATTATGACC-TTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCC---AGAAG----GACTAgcg 5'
+                    ||:| |:||  |:|  |     ||||:||| :|| ||  | | |||| |:|    || :  || ||:||| | |   |:|||    :||:|   
+   Ref:      5' ttttGCTA-CGCCGTGTTTTC-----AATATTGGTGAGGAA-CTTAACAATATTGAAAGTTGGATTTATCTGCGTGTGACATTTTCAATATTGGTgat 3'
+
+   Energy:  -59.580002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0041	145.00	-59.58	4 87	20 110	91	50.55%	62.64%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0041	295.00	-121.23	150.00	-61.65	40	90	300	 182 20
+Complete
+
+Read Sequence:b0042 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0042
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 183.000000  Q:3 to 80  R:1 to 76 Align Len (78) (51.28%) (65.38%)
+
+   Query:    3' ttttcggtcgtGGGCCG-ACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                           |:||||  ||| ||  || :|  |    ::| ||: |:: | || | | |::| ||:  ||| || | |  ||||:||  
+   Ref:      5' -----------CTCGGCGCGGCGAA--AAAGCCCGTCCAGGTATGGTCGGCGGCG-GATATTGGTTTTAACGC-AGAGGCAGCCTGGTCag 3'
+
+   Energy:  -68.750000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0042	183.00	-68.75	3 80	1 76	78	51.28%	65.38%
+
+
+   Forward:	Score: 179.000000  Q:2 to 88  R:68 to 152 Align Len (88) (52.27%) (60.23%)
+
+   Query:    3' tttTCGGTC--GTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                   :|:|||  || | ||:|| |  :  :| || | : | || || ||| :  ||||| ||  |||    | |||| |      | ||||| 
+   Ref:      5' cctGGTCAGAACAACAGGTTGCCGCGCCGAAACAGCGCG-AACGTCAGC-GCATCGTGATTGAAGG-CGACGGCGAAG----AACAGATCGc 3'
+
+   Energy:  -72.970001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0042	179.00	-72.97	2 88	68 152	88	52.27%	60.23%
+
+
+   Forward:	Score: 155.000000  Q:3 to 87  R:156 to 251 Align Len (92) (48.91%) (63.04%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATTCATTA---TGACCTTCGTTAC---ACTCGT-TACAGCACGAAAG-TCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                    ||::  | :|  :| || |||| ||   |:|  |:| :|||   ||| || :| |: |    || :||| :|| ||||    | |:|| :||  
+   Ref:      5' atttGCTGAAAATC--TTCGCAAAGTCATTTAATTACAGGGGATGCTATGAACACGTTTTCTCAAGTCTGGGTATTCAGCGATACCCCTTCTCGTCtg 3'
+
+   Energy:  -56.470001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0042	155.00	-56.47	3 87	156 251	92	48.91%	63.04%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0042	517.00	-198.19	183.00	-72.97	41	90	300	 1 68 156
+Complete
+
+Read Sequence:b0043 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0043
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 170.000000  Q:3 to 86  R:70 to 154 Align Len (87) (51.72%) (62.07%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTC-CAAGAGGCGCTCCCAGAAG---GACTAGcg 5'
+                     ||||:|| ||| |  |  :| | |::||| : |:  |||   ||  ||   ||| |:| | |  |||| ||  |:  |   :|||||  
+   Ref:      5' atcttCCAGTACGCGGATTAC--GGCATTGTTGGCGACGCCGTG---AAGATC---CTTCCGGCGCTGACCGC-AGCTTTAGCGCGTTGATCca 3'
+
+   Energy:  -69.690002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0043	170.00	-69.69	3 86	70 154	87	51.72%	62.07%
+
+
+   Forward:	Score: 156.000000  Q:2 to 88  R:187 to 274 Align Len (87) (50.57%) (59.77%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTA-CACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                   ||  ||| |::   |  | |||  || :| || || ||  | : |::||  | |||| | |||||  : :|  |  | |  || ||| 
+   Ref:      5' gacAGGGAGCTCTTATGT-CCGAAGATATCTTTGACGCCATCATCGTCGGTGCAGGGCTTGCCGGTTCGGT-TGCCGCAC-TGGTGCTCGc 3'
+
+   Energy:  -70.169998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0043	156.00	-70.17	2 88	187 274	87	50.57%	59.77%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0043	326.00	-139.86	170.00	-70.17	42	90	300	 70 187
+Complete
+
+Read Sequence:b0044 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0044
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 180.000000  Q:4 to 89  R:199 to 299 Align Len (97) (55.67%) (58.76%)
+
+   Query:    3' ttTTCGGTCGTGGGCCG--ACCGATTCATTATGACCTTC-GTTACACTCGTTACAGC-A-----CGAA--AGTCCAAGAGGCGCTCCCAG-AAGGACTAgcg 5'
+                  | | |  | |||| |  ||   | || | |||||: | ||||     |||||||| |     || |   ||  || | :|:|| || |  | |||||   
+   Ref:      5' ttATGACTTCTCCCGTCAATGTGGACGTCAAACTGGGCGTCAATAAATTCAATGTCGATGAAGAGCATCCGCACATTGT-TGTGAAGGCCGATGCTGATaaa 3'
+
+   Energy:  -70.680000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0044	180.00	-70.68	4 89	199 299	97	55.67%	58.76%
+
+
+   Forward:	Score: 174.000000  Q:2 to 89  R:29 to 123 Align Len (96) (52.08%) (65.62%)
+
+   Query:    3' ttTTCGGT-CGT--GGGCCGACCGATTCATTATGACCTTCG-TTACACTCGT-TACAGCACGAAAGT-CCAAGAGGCG-CTCCCAG-AAGGACTA-GCg 5'
+                  || ||| |||  ::: || |||||   :: :|||| :|: ::|||| ||: :|| | ||  ||||   ||  : || | | | |    ||||| || 
+   Ref:      5' atAACCCACGCATGTTTAGC-GGCTACCCGGAGCTGGCGGTGGGTGTG-GCGCGTGACCTG--TTCACCATTGATGGCAGCGCGCCGGAACTGATGCGc 3'
+
+   Energy:  -77.699997 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0044	174.00	-77.70	2 89	29 123	96	52.08%	65.62%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0044	354.00	-148.38	180.00	-77.70	43	90	300	 199 29
+Complete
+
+Read Sequence:b0045 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0045
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 174.000000  Q:4 to 87  R:58 to 148 Align Len (90) (52.22%) (67.78%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGA-TTCA-TTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAG--AA-G--GACTAgcg 5'
+                    |:| |||::| |  |||| ::|| :: :|||||| ||:|| || :|    || ||   ||  ||:  :|:|: | ||  || |  |||||   
+   Ref:      5' acctGTC-GCATTCTG-GGGCTGGGGTCGGCGCTGGAA-CAGTGGGAATA--CCCGCGC-GGCACCTTTGGTGTGGAGTTCCGTTACGGCTGATgtt 3'
+
+   Energy:  -72.930000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0045	174.00	-72.93	4 87	58 148	90	52.22%	67.78%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0045	174.00	-72.93	174.00	-72.93	44	90	300	 58
+Complete
+
+Read Sequence:b0046 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0046
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 142.000000  Q:3 to 89  R:35 to 124 Align Len (93) (48.39%) (62.37%)
+
+   Query:    3' ttTTCGGTCGTGGGC-CGACCGATTCATTATGACCTTCGTTACAC-TC-GTTACAGCA--CGA-AAGTCCAAGAGGCGCTCCCAGAAGGAC-TAGcg 5'
+                  ::| :: |||: | || | |  || ||||:   :| | : | | ||  ||||  ||   :| ||||| ||: :| |      :||:||| |||  
+   Ref:      5' gaGGGATGTCACTGGCGCAGAC-CAGCAATATGACGATCCGCGGGCAGAGAATGGGGTAAATTGTTCAGATTTCTCTC------TTTTCTGAATCaa 3'
+
+   Energy:  -66.290001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0046	142.00	-66.29	3 89	35 124	93	48.39%	62.37%
+
+
+   Forward:	Score: 140.000000  Q:3 to 89  R:175 to 269 Align Len (95) (52.63%) (58.95%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCAT--TATG-ACCTTCGTTACAC-TCGTTACAGCACGAAAGTCCAAGAG-GCGC----TCCCAGAAGGACTAGcg 5'
+                  ||| |:  |:|  || |||||  ||  || | |  || : ||| | | | :| ||  ||  |||  ||| | :|||    |  |  | |:||| |  
+   Ref:      5' caAAGGCGTAATCACGCGGGCTACCTATGATTCTTATAATTTATGCGCATCCGTATC-CGC-ATCA--TTCCCATGCGAATAAACGGATGCTTGAACag 3'
+
+   Energy:  -57.950001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0046	140.00	-57.95	3 89	175 269	95	52.63%	58.95%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0046	282.00	-124.24	142.00	-66.29	45	90	300	 35 175
+Complete
+
+Read Sequence:b0047 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0047
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 178.000000  Q:2 to 89  R:165 to 259 Align Len (96) (53.12%) (60.42%)
+
+   Query:    3' ttTTCG--GTCGTGGGCC-GACCG--ATTC-ATTATGACCT-TCGTTACACTCGTTACAGCACGAAAGTCCA-AGAGGCGCTCCCAGAAG-GACTAGCg 5'
+                  ||||  |: |  |:||  ||||   |:|   ||  |||| ||| ||  |  ::|| ||  ||  | |  | |||| |:  ||  |  | |||||:| 
+   Ref:      5' atAAGCAACGTCTGCTGGAATGGCAGGAGGCCCATCATGGATAGCCATACG-CTGAT-TCAGGCGCTGATTTATCTCGGTTCGG--CAGCGCTGATTGt 3'
+
+   Energy:  -64.800003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0047	178.00	-64.80	2 89	165 259	96	53.12%	60.42%
+
+
+   Forward:	Score: 146.000000  Q:3 to 66  R:1 to 93 Align Len (77) (54.55%) (61.04%)
+
+   Query:    3' ttttcggtcgtgggccgaccgattcATTATGACCTTCGT-TACACTCGTTACAGCACGAAA--GTCCAAGAGG--CGCTCCC---AGAAG------GACTAGcg 5'
+                                         |:| |:|||  ||: ||  |:||  || :||||| |  |||   || |  |||| ||   ||| |      |||| |  
+   Ref:      5' ----------cggggaaagccatttTGAAATTGG-TGCGCATCCGGGCTTTGATGTGCTGTCGCAGCCGCTACAGGCGACGGCAATCTACTGCGGGCTGAACtg 3'
+
+   Energy:  -69.849998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0047	146.00	-69.85	3 66	1 93	77	54.55%	61.04%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0047	324.00	-134.65	178.00	-69.85	46	90	300	 165 1
+Complete
+
+Read Sequence:b0048 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0048
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 208.000000  Q:2 to 86  R:127 to 217 Align Len (88) (53.41%) (64.77%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTC--ATTATGACCTTCGTTACACT-C-GTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                     |: ||||| | | | | | |  | | :||  | |:|  |||: | |||| |: | :| ||:||   ||: | | | ||  :|||||:| 
+   Ref:      5' tcatcCTCGCACCAGTC-GACGACGGTTTACGCTTTACGTATAGTGGCGACAAT-TTTTTTTATCGGGAAATCT-CAATGATCAGTCTGATTGc 3'
+
+   Energy:  -62.990002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0048	208.00	-62.99	2 86	127 217	88	53.41%	64.77%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0048	208.00	-62.99	208.00	-62.99	47	90	300	 127
+Complete
+
+Read Sequence:b0049 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0049
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 189.000000  Q:2 to 88  R:25 to 124 Align Len (98) (54.08%) (62.24%)
+
+   Query:    3' tttTCGGT-CGTGG-GCCGACCGATTCATTATG---ACCT--TCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCA--GAAG---GACTAGCg 5'
+                   |||||  :|:| || ||||| ||| |:|||   |  |  |||::||  | || ||     |   ::||  |  :|| |||||  || |    |||||| 
+   Ref:      5' tccAGCCACTTATCGCGCCTGGCGAAG-AGTACCAGTACACCAGCGGTGCAATCATTGAAACCCCGCTGGGCACCATGC-AGGGTCACTACGAAATGATCGa 3'
+
+   Energy:  -75.760002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0049	189.00	-75.76	2 88	25 124	98	54.08%	62.24%
+
+
+   Forward:	Score: 188.000000  Q:2 to 86  R:159 to 253 Align Len (91) (50.55%) (59.34%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTA--TGACCTTCGTTACACT-CGTTACAGCACGAAAG-TCCAAG-A--GGCGCTCCCAGAAGGACTAGCg 5'
+                     ||: | | | |:|  |  | | ||  |:|  ||| ||| ||: |  ||  | | :|  | | |||| |  ::|: | | |    ||||||| 
+   Ref:      5' gtattCCGACTCGCCGTTCCCACACTCATTCATTAAAAG-AATATGGCGACATACCTTATTGGCGACGTTCATGGTTGTTACGAT-GAACTGATCGc 3'
+
+   Energy:  -60.740002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0049	188.00	-60.74	2 86	159 253	91	50.55%	59.34%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0049	377.00	-136.50	189.00	-75.76	48	90	300	 25 159
+Complete
+
+Read Sequence:b0050 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0050
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 182.000000  Q:4 to 89  R:170 to 272 Align Len (101) (53.47%) (61.39%)
+
+   Query:    3' ttTTCGGTCGTGG-GCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAG------AGGCG---CTCC----CAGAA--GGACTAgcg 5'
+                  :||   ||:|| : || ||  |: ||| : ||  | ||||  |  | : || |||: |||||||||      ||: |   ||||     ||||  ||||||   
+   Ref:      5' cgGAGAACGCGCCTTTGCAGGAGAGTTAACGATG--ATCAATTCGCCCCGAGT-GTGTATTCAGGTTCAAAGCGTCTACATTGAGGCTCAATCTTCACCTGATaat 3'
+
+   Energy:  -68.510002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0050	182.00	-68.51	4 89	170 272	101	53.47%	61.39%
+
+
+   Forward:	Score: 160.000000  Q:2 to 86  R:69 to 158 Align Len (87) (50.57%) (64.37%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGC-GCTC-CCAGAA-GGACTAGCg 5'
+                     ::|||::|  | | |:|||  :: |: ||:| |:|   | ||:||| || ||    |   ||||:| || |   | || || ||| | 
+   Ref:      5' cctgtTTAGCGTCGAGGT-GTTAACGGGAATGGGGATCGACCCG-GCGATG-CGAGCGGAAAATATCTCTGTCGCGCAATATTGCCAGATGGc 3'
+
+   Energy:  -69.910004 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0050	160.00	-69.91	2 86	69 158	87	50.57%	64.37%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0050	342.00	-138.42	182.00	-69.91	49	90	300	 170 69
+Complete
+
+Read Sequence:b0051 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0051
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 169.000000  Q:2 to 85  R:99 to 191 Align Len (90) (52.22%) (63.33%)
+
+   Query:    3' ttttcgGTCGTGGGCCGACC--GATTCATTATG-ACC--TTC-GTTACACTCGTTACAGCACGAAAGTCCAAGAG-GCGCTCCCAGAAGGACTAGCg 5'
+                      |:|||||  ||| |  || :| :: || |||  ||| |:|||| :|||:| |: |     |:  |  || ||| |   ||    ||||:| 
+   Ref:      5' ggaccaCGGCACCGCGCTTGAACT-GGCGGGACGTGGCAAAGCCGATGTCGGCAGTTTTATTACGGCGCTTAATCTCGCCA---TCAAAATGATTGt 3'
+
+   Energy:  -69.480003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0051	169.00	-69.48	2 85	99 191	90	52.22%	63.33%
+
+
+   Forward:	Score: 161.000000  Q:2 to 87  R:186 to 280 Align Len (95) (52.63%) (57.89%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATT-CATTA--TGACCTTCGTTACACTCG---TTAC--AGCACGAAAGTCCAAGAGGCGCTCCCAG--AAGGACTAGCg 5'
+                    |::| |||||   ||  |||   |:|  ||  |:: || |  |  |   || |  ||| ||    |  |||||  |||   ||  ||| |||||| 
+   Ref:      5' gattGTTAACACCC-AATGAATAATCGAGTCCACCAGGGCCACTTAGCCCGTAAACGCTTCGGGC-AAAACTTTCTCAACGA---TCAGTTCGTGATCGa 3'
+
+   Energy:  -62.450001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0051	161.00	-62.45	2 87	186 280	95	52.63%	57.89%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0051	330.00	-131.93	169.00	-69.48	50	90	300	 99 186
+Complete
+
+Read Sequence:b0052 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0052
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 178.000000  Q:4 to 88  R:20 to 122 Align Len (98) (53.06%) (62.24%)
+
+   Query:    3' tttTCGGTCGTGGGCCGACCG---ATT--CATTATGACCT-T---CGTTACACTCGTTACAGC-ACGA-AAGTCCAAGAGGCGC---TCCCAGAAGGACTAgcg 5'
+                   | :|  ||::||||||||   |||  | | |:||||| |   |:||||| : :||   ||  |||   |||     :||:|   |  | | | |||||   
+   Ref:      5' ttcACTCTTCATTCGGCTGGCATTTAATCGAACTGCTGGATACCCGTAATGTCGATAAAACCGACGCTGCGCAGAAAGATCGTGCATACCG-CATGCTGATgaa 3'
+
+   Energy:  -69.379997 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0052	178.00	-69.38	4 88	20 122	98	53.06%	62.24%
+
+
+   Forward:	Score: 160.000000  Q:3 to 87  R:121 to 197 Align Len (84) (53.57%) (60.71%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                    |: ||: |:|||  |    || || :||||| |||:   || |||   |||||   |||   || ||: |      |||||| |  
+   Ref:      5' aaccGTAAGTTCTCGGAAGAAGCAGCAA-GCTGGATGCAG---GAACAA---CGTGC---CAGCGCCTACGTTA---AAATCCTGAGCaa 3'
+
+   Energy:  -60.509998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0052	160.00	-60.51	3 87	121 197	84	53.57%	60.71%
+
+
+   Forward:	Score: 148.000000  Q:2 to 86  R:221 to 298 Align Len (84) (48.81%) (60.71%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                     :|| | ||||||  ||  :  :: |:|||   |::  | ||:  ||||  |||| ||    |  ||:|||    |  | |:||| 
+   Ref:      5' tgtgaTCA-CTCCCGGCGAGCCCGCCGGGATTGG-CCCGGACTTAGT--TGTCCAGCTTGCA----CAGCGTGAG----TGGCCGGTCGa 3'
+
+   Energy:  -74.150002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0052	148.00	-74.15	2 86	221 298	84	48.81%	60.71%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0052	486.00	-204.04	178.00	-74.15	51	90	300	 20 121 221
+Complete
+
+Read Sequence:b0053 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0053
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 187.000000  Q:2 to 89  R:165 to 244 Align Len (87) (56.32%) (62.07%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  || || ||| :  || ||:||| |:| | |||||  |:| |||  ||   | ||      | | ||:| || |  ||  | |||||| 
+   Ref:      5' gtAATCC-GCAGT--GC-GGTTAATTGA-AATGGAAAAAGTATGAAGAA---C-TGGAAAACGCTGCTTCTCG-GTATCGCCATGATCGc 3'
+
+   Energy:  -60.950001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0053	187.00	-60.95	2 89	165 244	87	56.32%	62.07%
+
+
+   Forward:	Score: 157.000000  Q:3 to 89  R:74 to 160 Align Len (91) (50.55%) (62.64%)
+
+   Query:    3' ttTTCGGTCGTGG-GCC-GACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACG--AAAG-TCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  :|||:   ||: ||| |||| || | || |   || || : ||  | ||  |: |||  | || |    ||::|:||    :|| :||||:  
+   Ref:      5' ctGAGCTCCAACTACGGTCTGGGTACGCAAGA---GATGCTGCGTTCG-AACATTCTGCCGTATCAAAACACTTTGTGA----TTTGTTGATTta 3'
+
+   Energy:  -53.470001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0053	157.00	-53.47	3 89	74 160	91	50.55%	62.64%
+
+
+   Forward:	Score: 148.000000  Q:3 to 78  R:1 to 81 Align Len (86) (58.14%) (62.79%)
+
+   Query:    3' ttttcggtcgtggGCCGA-CCGATT-C-ATTATGACCTTCGT--TACACTCGTTAC---AGCACGAAA--GT-CCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                             |||:| || ||| | ||| ||   | ||:  || ||| ||| |   ||| |||||  ||  |  ||:||||:       ||||| |  
+   Ref:      5' ----------gaaCGGTTGGGATAACGATAA-ACAACATGCGGTATATGA-CAACGCAATCG-GCTTTAACATCGAACTTCGCGG-------CCTGAGCtc 3'
+
+   Energy:  -53.980000 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0053	148.00	-53.98	3 78	1 81	86	58.14%	62.79%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0053	492.00	-168.40	187.00	-60.95	52	90	300	 165 74 1
+Complete
+
+Read Sequence:b0054 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0054
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 158.000000  Q:2 to 87  R:90 to 184 Align Len (93) (54.84%) (62.37%)
+
+   Query:    3' ttttCGGTCGTGGGCC-GACCGATTCATTATGA-C-CTTCGTTAC-ACTCGTTACAGCA-CGAAAGTCCAAGAG-GCGC-TCCCAGAAG-GACTAGCg 5'
+                    | |: :|::||| | ||   | ||| ||| | | || :|||  |||:|   | ||  ||  | | || || |||| |  ||:  |  |||| | 
+   Ref:      5' cactGACGCTATTCGGACAGG---ATTAACACTAGCGTAGAGATGACGAGTACGTTAGTCTCTGACCGTTTGTCACGCGCAACGTTACCGATGATGGa 3'
+
+   Energy:  -62.689999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0054	158.00	-62.69	2 87	90 184	93	54.84%	62.37%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0054	158.00	-62.69	158.00	-62.69	53	90	300	 90
+Complete
+
+Read Sequence:b0055 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0055
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 181.000000  Q:2 to 89  R:160 to 250 Align Len (90) (48.89%) (62.22%)
+
+   Query:    3' ttTTCGGTCGTGGGCCG-ACCGATTCA-TTATGACCTTCGT-TACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  :|| :||| ||:| : |   |: || :|| : ||:| :| |||  ||:| ||  |     |||    | : || : || ||| ||||| | 
+   Ref:      5' ggGAGATAGC-CCTGATATCCGTGTGTCGATTTGGGGAATATATG-CAGTATTGGGGAAAAATCATTGGCGTGGCCGTGGCCTTACTGATGGg 3'
+
+   Energy:  -63.610001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0055	181.00	-63.61	2 89	160 250	90	48.89%	62.22%
+
+
+   Forward:	Score: 165.000000  Q:2 to 89  R:32 to 126 Align Len (97) (53.61%) (62.89%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCG-ATTCATTATGA-CCTT--CGTTAC--ACTCGTTACAGCACGA--AAGTCCAAGAGGCGCTCCCAGAAG--GACTAGCg 5'
+                  || ||  :::|||  | || | |||::|::| || |  ||| ||  ||| ||: ||  || |  | ||  || |  |||| |  |  |  :||| || 
+   Ref:      5' ttAATCC--TGTCCGAATAGCGTCAGTGGTGTTAGGCACGGCATTGAATGA-CAG-GT-ATGATAATGCAAATTATAGGCGATGTCCCACAATTGACCGc 3'
+
+   Energy:  -61.509998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0055	165.00	-61.51	2 89	32 126	97	53.61%	62.89%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0055	346.00	-125.12	181.00	-63.61	54	90	300	 160 32
+Complete
+
+Read Sequence:b4659 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b4659
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 162.000000  Q:2 to 89  R:203 to 292 Align Len (91) (56.04%) (61.54%)
+
+   Query:    3' ttTTC--GGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGC-ACGAA-AGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                  |||  :|||: || |||  ||  :|| | |||   |  ||| |||||||   || | :|| | || |  |  ||| ||| |    ||: || 
+   Ref:      5' gaAAGTATCAGTTCCAGGCATGC-CGGTTACACTTTTA--AATATGAGCAAGAACGATATTTATAAGATGGTGAGCG-GGGACAAGATGGACGt 3'
+
+   Energy:  -56.509998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b4659	162.00	-56.51	2 89	203 292	91	56.04%	61.54%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b4659	162.00	-56.51	162.00	-56.51	55	90	300	 203
+Complete
+
+Read Sequence:b0058 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0058
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 192.000000  Q:2 to 84  R:96 to 173 Align Len (83) (54.22%) (63.86%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATTCATTATGACCTTCGTTAC-ACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                       |||| ||| |  || |:|||||:  | ||||   | | ||  | ||:| || | ::| | | |:|||        ::|||||| 
+   Ref:      5' cattgagAGCAACCGTC-AGC-AGGTAATG--GAAAGCCTGGATCAGGCAGGTTG-GCGTCTGGATGCCCTGCG--------TTTGATCGt 3'
+
+   Energy:  -67.459999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0058	192.00	-67.46	2 84	96 173	83	54.22%	63.86%
+
+
+   Forward:	Score: 171.000000  Q:2 to 84  R:14 to 95 Align Len (82) (50.00%) (60.98%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                       | :::|:| |  |||:  | :| ||||||||  || | |||:|   |  |   | |    |:||:||  | |   |||| || 
+   Ref:      5' acgaaaaACTGTCTGCCGAGCTGTCTCGT-CTGGAAGCTCTGCGTGCAGT---GAAC---CCGAACATTCGTGA-CGACGAACTGACCGc 3'
+
+   Energy:  -69.459999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0058	171.00	-69.46	2 84	14 95	82	50.00%	60.98%
+
+
+   Forward:	Score: 142.000000  Q:3 to 86  R:178 to 257 Align Len (84) (54.76%) (60.71%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGAC-TAGcg 5'
+                     :|||:|  |||  | | ||  |||:  ||| | ||    | |||  ||   |   ||||  | |:| |  |||: ||||| |||  
+   Ref:      5' acgcaTCAGTA-ACGG-AGCCGAA--AATG-GGGATGGAAAACTA-CAA--TCCACC--GCAGGAACCCTG-GTTGGTTATCCTGTATCag 3'
+
+   Energy:  -59.810001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0058	142.00	-59.81	3 86	178 257	84	54.76%	60.71%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0058	505.00	-196.73	192.00	-69.46	56	90	300	 96 14 178
+Complete
+
+Read Sequence:b0059 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0059
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 154.000000  Q:3 to 89  R:144 to 232 Align Len (91) (52.75%) (62.64%)
+
+   Query:    3' ttTTCG-GTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCC--AAGAGGCGCTCCCAGAAG-GA-CTAGcg 5'
+                  |||| |:|:|  ||| |||:||  | :  ||| || :|| |  | :|: | ||  |   :| |  ||:| | |   ||||  | || ||||  
+   Ref:      5' atAAGCACGGTA-GCGGGTGGTTA--TTG-CCTGCAATTAAAGATA-TAGAGCCGAACACATATGCCTTTTACAC-TTGGTCAACGCTGGATCag 3'
+
+   Energy:  -54.169998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0059	154.00	-54.17	3 89	144 232	91	52.75%	62.64%
+
+
+   Forward:	Score: 152.000000  Q:2 to 72  R:1 to 74 Align Len (75) (54.67%) (61.33%)
+
+   Query:    3' ttttcggtcgtgggccgacCGAT-TCATTA-TGACCTTCGTTACACTCGTTACAGCACG-AAAGTCCAAGAGGCGCTC-CCAGAAGGACTA-GCg 5'
+                                   |||| | | || || ||  ||||  ||:|| || |:| ||     |     |:||| ||    | |::|||| || 
+   Ref:      5' -------------------GCTACACTTATGACCGG--GCAACTTGGGCTATTTTGAGCAAAAAAAAGAGTTCGCCAGATACCATTTTGATGCGt 3'
+
+   Energy:  -46.619999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0059	152.00	-46.62	2 72	1 74	75	54.67%	61.33%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0059	306.00	-100.79	154.00	-54.17	57	90	300	 144 1
+Complete
+
+Read Sequence:b0060 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0060
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 171.000000  Q:2 to 84  R:101 to 192 Align Len (87) (54.02%) (59.77%)
+
+   Query:    3' ttttcggTCGTGGGCCGACCGATTCATTA-TGACCTTCGTTACACTC-GTTACAGCACGAAAGTCCAAGAGGCGCTC---CCAGAAGGACTAGCg 5'
+                       :|||: :  | |||  |||||| |||| |   ||    || ||||     |    |||| | | | | ||   ||| ||::|||| | 
+   Ref:      5' gcgcgaaGGCATATTACGGGC--AGTAATGACTGTATAAAACCACAGCCAATCAAACGAAACCAGGCTATACTCAAGCCTGGT-TTTTTGATGGa 3'
+
+   Energy:  -65.910004 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0060	171.00	-65.91	2 84	101 192	87	54.02%	59.77%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0060	171.00	-65.91	171.00	-65.91	58	90	300	 101
+Complete
+
+Read Sequence:b0061 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0061
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 157.000000  Q:3 to 89  R:50 to 138 Align Len (92) (53.26%) (60.87%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACC--TTCGTTACACTCGTTACAGCACGAAAGTCCAAGA-GGCGCT-C--CCAGAAGGACTAGcg 5'
+                  |:|||  |:| | || | :|  |||: :| ||  ||||||   | |||   ||  || ||||    ||  :|||| |  ||    :|| |||  
+   Ref:      5' tcAGGCCTACGCGCTGC-GATTTTGTAG-GCCGGATAAGCAA--AGCGCA---TCCGGCATTCAACGCCTGATGCGACGCTGGCGCGTCTTATCag 3'
+
+   Energy:  -71.230003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0061	157.00	-71.23	3 89	50 138	92	53.26%	60.87%
+
+
+   Forward:	Score: 153.000000  Q:3 to 89  R:216 to 300 Align Len (87) (47.13%) (55.17%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGT-CCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  | |||||   :: |  | | |  |:: :|||  |  ||    | |   |||  |||  || ||  |  ||: || | |   :|||||  
+   Ref:      5' aaACGCCAGGTATTAGAAGCCAACCTGGCGCTGCCA--AAACACAACCTGGTCACGCTCACATGGGGCAACGTCAGCGCC--GTTGATC-- 3'
+
+   Energy:  -63.099998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0061	153.00	-63.10	3 89	216 300	87	47.13%	55.17%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0061	310.00	-134.33	157.00	-71.23	59	90	300	 50 216
+Complete
+
+Read Sequence:b0062 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0062
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 149.000000  Q:2 to 88  R:13 to 100 Align Len (88) (51.14%) (56.82%)
+
+   Query:    3' tttTCG-GTCGTGGGCCGACCGATT-CATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                   ||| |||||      |||| |: | ::||  | || |  ||  | | :|| |  ||   ||||  |  |||   |  |  |:| |||| 
+   Ref:      5' atcAGCTCAGCA-AAAAATGGCCAGTGCGGTAGAGAAAACCCTG-CAACCGTG-C-AGCGAGCAGGCACAACGCTTTGAACAGCTTTATCGc 3'
+
+   Energy:  -59.169998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0062	149.00	-59.17	2 88	13 100	88	51.14%	56.82%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0062	149.00	-59.17	149.00	-59.17	60	90	300	 13
+Complete
+
+Read Sequence:b0063 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0063
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 148.000000  Q:2 to 76  R:185 to 283 Align Len (84) (52.38%) (61.90%)
+
+   Query:    3' ttttcggtcgtgggcCGACCGATTCATTATGACCTTCGTTACACTCGTTAC--AG-CA----CGAAA--GTC-CAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                               | |||| :| |:  |:|||   |:|| | :|||:||  || ||    |||||  |:| |  || ||| |  | :     ||||| 
+   Ref:      5' tggatggagtgaaacGATGGC-GATTGCAATTGGCCTCGATTTTGGCAGTGATTCTGTGCGAGCTTTGGCGGTGGACTGCGCTACCGGTGAAGAGATCGc 3'
+
+   Energy:  -84.300003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0063	148.00	-84.30	2 76	185 283	84	52.38%	61.90%
+
+
+   Forward:	Score: 145.000000  Q:2 to 87  R:72 to 152 Align Len (87) (50.57%) (58.62%)
+
+   Query:    3' ttttCG-GTCGTGG-GCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                    || |:||::| |  :| |||| |  ||      |||| | | | | ||    |  |  |:| | || | :|| |  ||| :| |||| 
+   Ref:      5' atttGCACGGCGTCACACTTTGCTATGCCAT------AGCATTTTTATCCATAAGAT--TAGCGGATCCTACCTGACG--CTT-TTTATCGc 3'
+
+   Energy:  -50.349998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0063	145.00	-50.35	2 87	72 152	87	50.57%	58.62%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0063	293.00	-134.65	148.00	-84.30	61	90	300	 185 72
+Complete
+
+Read Sequence:b0064 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0064
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 178.000000  Q:2 to 89  R:89 to 184 Align Len (94) (48.94%) (63.83%)
+
+   Query:    3' ttTTCGGTCG-TGGGCCGACCGAT----TC-ATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAG-GACTAGCg 5'
+                  ::|::| | ::: ||:| || |    ||  |:||   || |||:||  :|||||||| || |   |  |   |  : :|  ||||| |||| :| 
+   Ref:      5' cgGGGTTACCGGTTGGGTTAGCGAGAAGAGCCAGTAAAAGACGCAGTGACGGCAATGTC-TGATGCAATATGGACAATTGGTTTCTTCTCTGAATGg 3'
+
+   Energy:  -66.139999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0064	178.00	-66.14	2 89	89 184	94	48.94%	63.83%
+
+
+   Forward:	Score: 161.000000  Q:2 to 69  R:175 to 262 Align Len (69) (52.17%) (63.77%)
+
+   Query:    3' ttttcggtcgtgggccgaccgaTTCATTATGACCTT-CGTTACACTCGTTACAGCACGAAAGTCC-AAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                                      |||||  :||| |: ||||    | ::||  | ||||  |:|| | |||  : |  | |  :|||:| | 
+   Ref:      5' ctctgaatggtgggagtatgaaAAGTATGGCTGAAGCGCAA----AATGATCCCCTGCTGCCGGGATACTCGTTTAACGCCCATCTGGTGGc 3'
+
+   Energy:  -64.849998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0064	161.00	-64.85	2 69	175 262	69	52.17%	63.77%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0064	339.00	-130.99	178.00	-66.14	62	90	300	 89 175
+Complete
+
+Read Sequence:b0065 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0065
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 194.000000  Q:2 to 87  R:208 to 298 Align Len (89) (48.31%) (64.04%)
+
+   Query:    3' ttttCGGTC--GTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGA-AG-GACTAGCg 5'
+                    ||::|  |||::  :|  | ||   |   || |  || ||  :||::||  |||:|  ::|  |:||:| |||   ||  | |||:||| 
+   Ref:      5' cattGCTGGAACACTTTATTACCCAATCCACCGTGTATTCATTGATGGCGGTG--GTGTTGGTGGCCTTTCTG-GAGTCGCTGGCGCTGGTCGg 3'
+
+   Energy:  -73.370003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0065	194.00	-73.37	2 87	208 298	89	48.31%	64.04%
+
+
+   Forward:	Score: 145.000000  Q:3 to 89  R:43 to 130 Align Len (89) (52.81%) (61.80%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCAT-TATGAC-CTTC-GTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  ::|||||| ||  ||  |:|  ||:   ::|| ||||  || |||| ::||||   ||  ||| ||| ||      ||  |  |  |||  
+   Ref:      5' cgGGGCCAGC-CCGAGCGAGTTTCGTGCCGGTTGTGAAGAAAAAGTGAATGATGT--AGCCGTCAAGTTGTCATAATTGG--TAACGAATCag 3'
+
+   Energy:  -69.230003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0065	145.00	-69.23	3 89	43 130	89	52.81%	61.80%
+
+
+   Forward:	Score: 141.000000  Q:5 to 88  R:126 to 220 Align Len (89) (48.31%) (61.80%)
+
+   Query:    3' tttTCGGTCGTGGGCCG-ACCGATTCATTATGACCT--TCGTTACACTCGTTACAGCACG-AAA--GTCCAAGAGGCGCTCCCAGAAGGACTagcg 5'
+                   || || :   |||| || | :||||: |: ||:   |||:  |   :: | |||| | |||  ||||  | :: :|   |  || |||:    
+   Ref:      5' atcAGACAATTGACGGCTTGACGGAGTAGCATAGGGTTTGCAGAATCCCTGCT-TCGTCCATTTGACAGGCACATTATGCAAGCATTGCTGGaaca 3'
+
+   Energy:  -62.740002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0065	141.00	-62.74	5 88	126 220	89	48.31%	61.80%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0065	480.00	-205.34	194.00	-73.37	63	90	300	 208 43 126
+Complete
+
+Read Sequence:b0066 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0066
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 170.000000  Q:2 to 86  R:89 to 183 Align Len (93) (52.69%) (64.52%)
+
+   Query:    3' ttttcGGTCG-TGGGCCGACCGATTCATTATGACCT-TCGTTACACT--CG---TTACAGC-ACGAAAGTCCAAGAGGCGCTCCCAGAAGG-ACTAGCg 5'
+                     ||||| | ::||||  |||    |  | ||| :|::  || |  ||   |||  :| ||||  :  |||:||:||    ||:| || ||||:| 
+   Ref:      5' ctctaCCAGCAAATTGGCT-CCTATCGCAGCCAGGACGGTGCGGTCACCGCGTTAATTCTGCTGCTGCTCTGTTTTCTGC---TGTTTACCGTGATTGa 3'
+
+   Energy:  -71.650002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0066	170.00	-71.65	2 86	89 183	93	52.69%	64.52%
+
+
+   Forward:	Score: 151.000000  Q:3 to 83  R:3 to 91 Align Len (84) (51.19%) (64.29%)
+
+   Query:    3' ttttcggtCGTGGGC-CGAC--CGATTCATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCA-GAAGGACTAGcg 5'
+                        |||: || ||||  | | :||:|| :||   ||:  ||| ||: |||:  |:    | | |:||||| |   | |  ::| |||  
+   Ref:      5' tggcctttGCATGCGTGCTGTCGATTGGTGATTTTG---GCGTGGTG-GCGTTGTTCGGTAACGATGATTTCCGC-ACCCTGCCGTTTTATCtc 3'
+
+   Energy:  -65.370003 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0066	151.00	-65.37	3 83	3 91	84	51.19%	64.29%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0066	321.00	-137.02	170.00	-71.65	64	90	300	 89 3
+Complete
+
+Read Sequence:b0067 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0067
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 162.000000  Q:2 to 88  R:171 to 271 Align Len (98) (51.02%) (61.22%)
+
+   Query:    3' tttTCG-GTCGTGGGCCG-ACCGATTCATTATGACCTT-CGTTACACTCGTTACAGCACGAAAGTCCAA--GAGG--CGC--TCCCAGAAG---GACTAGCg 5'
+                   :|| || |::| ||| ||| | || :| |: | || ||:  || ||| :|    | |   | ||||  :|||  |:|  || | |  |   |||:| | 
+   Ref:      5' ggcGGCACAACGTCAGGCATGGATTAGCGA-ATGGCAACGCGCCGTCAGCCGTTAATTCCCGGCTGGTTAATTCCAGGTGTAAGCGCCACCACGCTGGTGGt 3'
+
+   Energy:  -76.690002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0067	162.00	-76.69	2 88	171 271	98	51.02%	61.22%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0067	162.00	-76.69	162.00	-76.69	65	90	300	 171
+Complete
+
+Read Sequence:b0068 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0068
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 160.000000  Q:5 to 86  R:21 to 112 Align Len (84) (52.38%) (59.52%)
+
+   Query:    3' ttttcGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTACAGCACGA-AAG-TCCAAGAGGCGCTCCCAGAAG-GACTagcg 5'
+                     ||:|  ||  | | |||:: |:|||    || || |   | :|| | ||| ||   | :||| |  ||||   |  | | ||||    
+   Ref:      5' cgccaCCGGATCCATGATTGCTGGTTGATAACAAAATCACT-ACACTAACGCCGTTCTCAACGGGGTGCCACGCGTACGCGTGCGCTGAgaaa 3'
+
+   Energy:  -62.209999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0068	160.00	-62.21	5 86	21 112	84	52.38%	59.52%
+
+
+   Forward:	Score: 156.000000  Q:2 to 87  R:174 to 271 Align Len (95) (49.47%) (62.11%)
+
+   Query:    3' ttttCGGTCGTGGGCCGAC-CGATTCATTATGACCTTCGTTACACTC-GTTACAGC-ACGAAA---GTC-C---AAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                    |||| | |::  :|| | |:   |:|::|  ||  |||||  | |  || :| |||| |   ||| |    |:|:||| |    | |:|||| :| 
+   Ref:      5' ctttGCCA-CTCTTTTTTGAGGTGCAAAGTGTT-AAAAAAATGTCTGCCCCTGCTGTTGCTGTGCACAGCGCCCGTTTTCGCTAAACCCGTTCTGACTGt 3'
+
+   Energy:  -61.540001 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0068	156.00	-61.54	2 87	174 271	95	49.47%	62.11%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0068	316.00	-123.75	160.00	-62.21	66	90	300	 21 174
+Complete
+
+Read Sequence:b0069 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0069
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 178.000000  Q:2 to 86  R:124 to 215 Align Len (88) (48.86%) (62.50%)
+
+   Query:    3' ttttcGGTCGTGGGCC-GACCGATT-CATTATGACCTTCGTTACACTCGTTACAGCACGAAAGTC--CAAGAGGCGCTCCCAGAAGGACTAGCg 5'
+                     :|| |::: ||  |  :|:|  |||||: ||:|  |||   | :: |||| | :   |||  |||| || :    | | | ||| ||| 
+   Ref:      5' ttgctTCATCGTTAGGAATTATTGACTTAATATAGGGA-AAATAAAATTGCTGTCTTTTGCACAGGAGTTCCCCTTTTATGCCAT-CTGCTCGt 3'
+
+   Energy:  -50.259998 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0069	178.00	-50.26	2 86	124 215	88	48.86%	62.50%
+
+
+   Forward:	Score: 151.000000  Q:4 to 86  R:8 to 102 Align Len (92) (52.17%) (59.78%)
+
+   Query:    3' ttttcGGTC--GTGGGCCG-ACCGATTCATTATGACCTTCGTTACACTCGTTAC--AGCACGAAAGTCCAAGAGGC-GCTCC----CAGAAGGACTAgcg 5'
+                     :|||  | :|  || |||:||| | :|  |||:| |: | | | ||| |   |  ||   ||  ||| |:| || ||     |  | |||||   
+   Ref:      5' ctgcaTCAGTCCTTCAAGCATGGTTAA-TCGTTGTGGGA-CGCT-TAACCAACGCAACCAGC--ACAACTTCGCTGTCGCGGTAAAATAGTGCTGATaaa 3'
+
+   Energy:  -58.049999 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0069	151.00	-58.05	4 86	8 102	92	52.17%	59.78%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b0069	329.00	-108.31	178.00	-58.05	67	90	300	 124 8
+Complete
+
+Read Sequence:b4662 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b4662
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 174.000000  Q:2 to 89  R:160 to 255 Align Len (100) (52.00%) (65.00%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGATTCATTATGACCTTCGTTACACTCGTTA--CAG-CACGAAAGTC----CAAGA-GGCGC--TC-C--CAGAAGGACTAGCg 5'
+                  |||:|| :| ::  |   ||||  :||:  | ||| :: |||  | ||  ||| || :| ||||     ||:| |||||  || |  ||: | |||:|:| 
+   Ref:      5' ttAAGTCAATAATT--C---CTAA-CGATGAAGCAAG-GGGGTGCCCCATGCGTCAGTTTTATCAGCACTATTTTACCGCGACAGCGAAGTTGTGCTGGTTGc 3'
+
+   Energy:  -66.260002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b4662	174.00	-66.26	2 89	160 255	100	52.00%	65.00%
+
+
+   Forward:	Score: 146.000000  Q:4 to 81  R:1 to 85 Align Len (82) (53.66%) (59.76%)
+
+   Query:    3' ttttcggtcgTGGGC-CGACCGATTCATTATGACCTTC--GTTACACTCGTTACAGCACG-AAAGTCCAAGAGGCG-CTCCCAGAAGGACTAgcg 5'
+                          || || ||  ||| | ||| :|||  ||  |: || | |: :|||| |||  ||:|   || | ||   |   |   | |||   
+   Ref:      5' ---------gACGCGAGC-AGCTCAATAACGCTGCCAGTTCGTTGAGCGTTGTGTCCTGCGATTTACCCTCGCAGCATTGCCACAGGCGGATgaa 3'
+
+   Energy:  -59.830002 kCal/Mol
+
+Scores for this hit:
+>ryhB	b4662	146.00	-59.83	4 81	1 85	82	53.66%	59.76%
+
+Score for this Scan:
+Seq1,Seq2,Tot Score,Tot Energy,Max Score,Max Energy,Strand,Len1,Len2,Positions
+>>ryhB	b4662	320.00	-126.09	174.00	-66.26	68	90	300	 160 1
+Complete
+
+Read Sequence:b0070 (300 nt)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Performing Scan: ryhB vs b0070
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Forward:	Score: 200.000000  Q:2 to 87  R:176 to 265 Align Len (91) (54.95%) (63.74%)
+
+   Query:    3' ttttCGGTCGTGGGCCGACCGATTCATTAT-GACCTTCGTTACACTCGTTAC--AGCACGAAAGT--CCA-AGAGGCGCTCCCAGAAGGACTAGCg 5'
+                    ||| ||:|:     ||  | |||  | |||||  :||  ||| |:|||  |||   | | |  ||| |:| ||||:   |: | |||:||| 
+   Ref:      5' tctcGCC-GCGCTAAAAAGGGAACGTATGATCTGGA--TAA--TGA-CGATGGCTCGCCGTATGAACGGTGTTTACGCGGCATTTATGCTGGTCGc 3'
+
+   Energy:  -70.629997 kCal/Mol
+
+Scores for this hit:
+>ryhB	b0070	200.00	-70.63	2 87	176 265	91	54.95%	63.74%
+
+
+   Forward:	Score: 168.000000  Q:3 to 89  R:91 to 178 Align Len (88) (52.27%) (65.91%)
+
+   Query:    3' ttTTCGGTCGTGGGCCGACCGA-TTCATTATGACCTTCGTTA-CACTCGTTACAGCACGAAAGTCCAAGAGGCGCTCCCAGAAGGACTAGcg 5'
+                  |||:::  ||::| |||  | | ||:  ||||  ||:| | |||   |||  |  ||   ||| || | | :|  |||:||::| ||:  
+   Ref:      5' gaAAGTTG--ACTTGCCTGCATCATGTGTGACTG--AGTATTGGTGTAAAATCACCCGCCAGCAGATTATACCTGCTGGTTTTTTTTATTct 3'
+
+   Energy:  -59.939999 kCal/Mol
+
+Scores for this hit:

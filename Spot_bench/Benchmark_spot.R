@@ -13,7 +13,9 @@ library(ggplot2)
 ### sRNA ryhB
 ######## Predictions
 
-tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',stringsAsFactors = F) 
+tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',stringsAsFactors = F) %>% select(id1,id2,E) %>% mutate(alg='sTar')
+
+mir_r<- read.delim('Predictions/miranda_r.csv',header=T,sep=';',stringsAsFactors = F) %>% rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% select(id1,id2,E) %>% mutate(alg='mir')
 
 ######## Validated Target
 
@@ -29,7 +31,9 @@ fp_r <- c('b3336','b1683','b4367','b1684',
 
 ### sRNA sgrS
 ######## Predictions
-tar_s<- read.delim('Predictions/res_tar_s.csv',header = T,sep = ';',stringsAsFactors = F)%>% mutate(id2='sgrS')
+tar_s<- read.delim('Predictions/res_tar_s.csv',header = T,sep = ';',stringsAsFactors = F)%>% mutate(id2='sgrS')%>% select(id1,id2,E) %>% mutate(alg='sTar')
+
+mir_s<- read.delim('Predictions/miranda_s.csv',header=T,sep=';',stringsAsFactors = F) %>% rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% select(id1,id2,E)%>% mutate(alg='mir')
 
 ######## Validated Target
 
