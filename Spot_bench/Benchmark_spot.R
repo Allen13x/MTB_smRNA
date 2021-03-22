@@ -17,6 +17,11 @@ tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',stringsAsFacto
 
 mir_r<- read.delim('Predictions/miranda_r.csv',header=T,sep=';',stringsAsFactors = F) %>% rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% select(id1,id2,E) %>% mutate(alg='mir')
 
+plex <- read.delim('Predictions/plex.csv',header = F,
+                   col.names =c('id1','id2','range1','range2','E'),
+                   sep=';',stringsAsFactors = F) %>% 
+  select(id1,id2,E) %>% mutate(alg='plex',E=as.numeric(E))
+
 ######## Validated Target
 
 ver_r<- c('b0118','b0156','b0592','b0683','b0721',
@@ -48,9 +53,9 @@ fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
 
 
 ######## Join predictions dataset
-tar= rbind(tar_r,tar_s)
+db = rbind(tar_r,tar_s,mir_r,mir_s,plex)
 
-
+#db = rbind(tar_r,tar_s)
 
 ######## Verified dataset target
 verified <- data.frame(v=c(rep('t',18),rep('f',7),rep('t',8),rep('f',12)),
@@ -61,32 +66,31 @@ verified <- data.frame(v=c(rep('t',18),rep('f',7),rep('t',8),rep('f',12)),
 
 
 #### Check TP and FP rates - single sRNAs#####
+alg <- db %>% select(alg) %>% distinct() %>% pull()
+query<- db %>% select(id2) %>% distinct() %>% pull()
 
+d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'),a=c('a'))
 
-d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'))
-
-
+for (a in alg){
+  for (i in query) {
+    n<- length(verified %>% filter(srna==i,v=='t') %>% pull(srna))
+    f<- length(verified %>% filter(srna==i,v=='f') %>% pull(srna))
 for (t in seq(0,2300,100)){
-  for (i in c('ryhB','sgrS')) {
-
-
-  n<- length(verified %>% filter(srna==i,v=='t') %>% pull(srna))
-  f<- length(verified %>% filter(srna==i,v=='f') %>% pull(srna))
-  m<-tar %>% filter(id2==i) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='t') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
-  z<-tar %>% filter(id2==i) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='f') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
-  d<-rbind(d,c(t,i,m/n,z/f))
+  m<-db %>% filter(id2==i,alg==a) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='t') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
+  z<-db %>% filter(id2==i,alg==a) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='f') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
+  d<-rbind(d,c(t,i,m/n,z/f,a))
   
 }
 }
+}
 
 
-
-d<- d[2:49,]
+d<- d[-1,]
 
 
 ##### ROC figures - single sRNAs
 
-d %>% mutate_at(.vars = vars(rel,fp,t),as.numeric) %>% 
+d %>%  mutate_at(.vars = vars(rel,fp,t),as.numeric) %>% 
   ggplot(aes(x=fp,y=rel))+
   ylim(0,1)+xlim(0,1)+
   geom_point(aes(color=t),lwd=3)+
@@ -97,7 +101,7 @@ d %>% mutate_at(.vars = vars(rel,fp,t),as.numeric) %>%
   scale_color_gradient(name='Threshold - Top Targets',low = 'red',high = 'blue' )+
   ggtitle('Roc curve - IntaRNA_sTar single sRNA')+
   geom_abline(slope = 1,intercept = 0)+
-  facet_wrap(~srn)
+  facet_grid(a~srn)
 
 
 ggsave('Fig/roc_Sgrs_facet.png', dpi=300)
@@ -108,9 +112,9 @@ ggsave('Fig/roc_Sgrs_facet.png', dpi=300)
 
 
 
-d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'))
+d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'),a=c('a'))
 
-
+for (a in alg){
 for (t in seq(0,2300,100)){
 
     vt<-verified %>% filter(v=='t')
@@ -118,27 +122,27 @@ for (t in seq(0,2300,100)){
     
     n<- length(vt %>% pull(srna))
     f<- length(vf %>% pull(srna))
-    m<-tar  %>%mutate(r=rank(E))%>% filter(r<t) %>%
+    m<-db %>% filter(alg==a) %>%mutate(r=rank(E))%>% filter(r<t) %>%
       inner_join(vt,by=c('id2'='srna','id1'='target')) %>% 
       summarise(n=n()) %>% pull(n)
-    z<-tar %>%mutate(r=rank(E))%>% filter(r<t) %>%
+    z<-db %>% filter(alg==a) %>%mutate(r=rank(E))%>% filter(r<t) %>%
       inner_join(vf,by=c('id2'='srna','id1'='target')) %>% 
       summarise(n=n()) %>% pull(n)
-    d<-rbind(d,c(t,'srna',m/n,z/f))
+    d<-rbind(d,c(t,'srna',m/n,z/f,a))
     
 
-}
+}}
 
 
 
 
 
-d=d[2:25,]
+d=d[-1,]
 
 ##### ROC figures - single sRNAs
 
 
-d %>% mutate_at(.vars = vars(rel,fp,t),as.numeric) %>% 
+d  %>%  mutate_at(.vars = vars(rel,fp,t),as.numeric) %>% 
   ggplot(aes(x=fp,y=rel))+
   ylim(0,1)+xlim(0,1)+
   geom_point(aes(color=t),lwd=3)+
@@ -148,7 +152,8 @@ d %>% mutate_at(.vars = vars(rel,fp,t),as.numeric) %>%
   xlab('False Positive')+
   scale_color_gradient(name='Threshold - Top Targets',low = 'red',high = 'blue' )+
   ggtitle('Roc curve - IntaRNA_sTar_joint')+
-  geom_abline(slope = 1,intercept = 0)
+  geom_abline(slope = 1,intercept = 0)+
+  facet_wrap(~a)
 
 
 
