@@ -1,1 +1,2 @@
-# srna
+# sRNA targeting host-pathogen
+
