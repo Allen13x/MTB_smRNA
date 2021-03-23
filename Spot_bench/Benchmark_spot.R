@@ -1,19 +1,33 @@
 
 # R <- Version 4.0.2
 
+# Settings ----------------------------------------------------------------
+
+
 #Import Libraries
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 
-##### Import Data #####
+#Custom functions
+simple_auc <- function(rel, fp){
+  dFPR <- c(diff(fp), 0)
+  dTPR <- c(diff(rel), 0)
+  sum(rel * dFPR) + sum(dTPR * dFPR)/2
+}
 
-#### IntaRNA_sTAR predictions
+
+##### Import Data #####
 
 ### sRNA ryhB
 ######## Predictions
 
-tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',
+tar_r<- read.delim('Predictions/res_tar_r.csv',header = T,sep = ';',
+                   stringsAsFactors = F) %>% 
+  select(id1,id2,E) %>% 
+  mutate(alg='sTar')
+
+tar<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',
                    stringsAsFactors = F) %>% 
   select(id1,id2,E) %>% 
   mutate(alg='sTar')
@@ -23,13 +37,18 @@ mir_r<- read.delim('Predictions/miranda_r.csv',header=T,
   rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% 
   select(id1,id2,E) %>% mutate(alg='mir')
 
-plex <- read.delim('Predictions/plex.csv',header = F,
+plex <- read.delim('Predictions/plex1.csv',header = F,
                    col.names =c('id1','id2','range1','range2','E'),
                    sep=';',stringsAsFactors = F) %>% 
   select(id1,id2,E) %>% 
-  mutate(alg='plex',E=as.numeric(E))
+  mutate(alg='plex',E=as.numeric(E)) %>% filter(id1!='null')
 
 ######## Validated Target
+
+ver_r <- c('acnB','erpA','fepB','fur','sdhC',
+           'sdhD','marA','fumA','sodB','msrB',
+           'shiA','cirA','iscS','nirB','hdeA',
+           'cysE','zapB','frdA')
 
 ver_r<- c('b0118','b0156','b0592','b0683','b0721',
           'b0722','b1531','b1612','b1656','b1778',
@@ -37,6 +56,8 @@ ver_r<- c('b0118','b0156','b0592','b0683','b0721',
           'b3607','b3928','b4154')
 
 ######## Validated non-Target
+fp_r <- c('bfr','sufB','fhuF','sufA','fhuA',
+          'fthA','ygdQ')
 
 fp_r <- c('b3336','b1683','b4367','b1684',
           'b0150','b1905','b2832')
@@ -49,10 +70,17 @@ mir_s<- read.delim('Predictions/miranda_s.csv',header=T,sep=';',stringsAsFactors
 
 ######## Validated Target
 
+ver_s <- c('ptsG','purR','manX','manY',
+           'folE','asd','yigL','adiY')
+
 ver_s <- c('b1101','b1658','b1817','b1818',
          'b2153','b3433','b3826','b4116')
 
 ######## Validated non-Target
+
+fp_s <- c('zinT','cusF','ykgM','ykgO','znuA',
+          'yebA','purR','yeeD','znuC',
+          'ydjN','malK','mglB')
 
 fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
         'b1178','b2012','b1858','b1729','b4035','b2150')
@@ -62,6 +90,7 @@ fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
 ######## Join predictions dataset
 db = rbind(tar_r,tar_s,plex)
 
+
 #db = rbind(tar_r,tar_s)
 
 ######## Verified dataset target
@@ -69,7 +98,7 @@ verified <- data.frame(v=c(rep('t',18),rep('f',7),rep('t',8),rep('f',12)),
                        srna=c(rep('ryhB',25),rep('sgrS',20)),
                        target=c(ver_r,fp_r,ver_s,fp_s))
 
-
+# verified_1 <- verified
 
 
 #### Check TP and FP rates - single sRNAs#####
@@ -177,3 +206,96 @@ d  %>%  mutate_at(.vars = vars(rel,fp,t),as.numeric) %>%
 
 
 ggsave('Fig/roc_Sgrs.png', dpi=300)
+
+
+
+
+
+
+# Intersection method -----------------------------------------------------
+
+# Double check - rank by sTar
+db_c<-inner_join(tar,plex,by=c('id1','id2')) %>% 
+  mutate(alg='mix_sTar',E=E.x) %>% select(-E.x,-E.y,-alg.x,-alg.y)
+# Double check - rank by plex
+db_p<-inner_join(tar,plex,by=c('id1','id2')) %>% 
+  mutate(alg='mix_plex',E=E.y) %>% select(-E.x,-E.y,-alg.x,-alg.y)
+
+# Double check - rank by min
+
+db_b<-aggregate(E~id1+id2,
+          inner_join(tar,plex,by=c('id1','id2')) %>%
+            mutate(E.x=rank(E.x),E.y=rank(E.y)) %>% 
+            gather(var,E,E.x,E.y),min) %>%  tibble() %>% mutate(alg='mix_both')
+
+
+# Aggregate algorithms predictions
+db<-rbind(tar,plex,db_c,db_p,db_b)
+  
+aggregate(E~id1+id2+alg,db,min) %>% tibble()->db
+
+
+
+
+#### Check TP and FP rates - overall sRNAs#####
+
+alg <- db %>% select(alg) %>% distinct() %>% pull()
+query<- db %>% select(id2) %>% distinct() %>% pull()
+
+d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'),a=c('a'))
+
+for (a in alg){
+  for (t in seq(0,9000,100)){
+    
+    vt<-verified %>% filter(v=='t')
+    vf<-verified %>% filter(v=='f')
+    
+    n<- length(vt %>% pull(srna))
+    f<- length(vf %>% pull(srna))
+    m<-db %>% filter(alg==a) %>%mutate(r=rank(E))%>% filter(r<t) %>%
+      inner_join(vt,by=c('id2'='srna','id1'='target')) %>% 
+      summarise(n=n()) %>% pull(n)
+    z<-db %>% filter(alg==a) %>%mutate(r=rank(E))%>% filter(r<t) %>%
+      inner_join(vf,by=c('id2'='srna','id1'='target')) %>% 
+      summarise(n=n()) %>% pull(n)
+    d<-rbind(d,c(t,'srna',m/n,z/f,a))
+    
+    
+  }
+  d<- rbind(d,c(t+100,'srna',1,1,a))
+  }
+
+d=d[-1,]
+d  %>%  mutate_at(.vars = vars(rel,fp,t),as.numeric) -> d
+##### ROC figures - single sRNAs
+
+d  %>% 
+  ggplot(aes(x=fp,y=rel))+
+  ylim(0,1)+xlim(0,1)+
+  geom_point(aes(color=t),lwd=3)+
+  geom_path()+
+  theme_classic()+
+  ylab('True Positive')+
+  xlab('False Positive')+
+  scale_color_gradient(name='Threshold - Top Targets',low = 'orange',high = 'green' )+
+  ggtitle('Roc curve - IntaRNA_sTar_joint')+
+  geom_abline(slope = 1,intercept = 0)+
+  facet_wrap(~a)
+
+
+ggsave('Fig/roc_algs_full_genome.png', dpi=300)
+
+
+# Ranking algorithms
+auc=c()
+
+for (i in d %>% select(a) %>% distinct() %>% pull(a)){
+
+auc[i] = with(d %>% filter(a==i),simple_auc(rel,fp))
+
+}
+
+auc[order(-auc)]
+
+
+
