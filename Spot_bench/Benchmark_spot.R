@@ -13,14 +13,21 @@ library(ggplot2)
 ### sRNA ryhB
 ######## Predictions
 
-tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',stringsAsFactors = F) %>% select(id1,id2,E) %>% mutate(alg='sTar')
+tar_r<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',
+                   stringsAsFactors = F) %>% 
+  select(id1,id2,E) %>% 
+  mutate(alg='sTar')
 
-mir_r<- read.delim('Predictions/miranda_r.csv',header=T,sep=';',stringsAsFactors = F) %>% rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% select(id1,id2,E) %>% mutate(alg='mir')
+mir_r<- read.delim('Predictions/miranda_r.csv',header=T,
+                   sep=';',stringsAsFactors = F) %>% 
+  rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% 
+  select(id1,id2,E) %>% mutate(alg='mir')
 
 plex <- read.delim('Predictions/plex.csv',header = F,
                    col.names =c('id1','id2','range1','range2','E'),
                    sep=';',stringsAsFactors = F) %>% 
-  select(id1,id2,E) %>% mutate(alg='plex',E=as.numeric(E))
+  select(id1,id2,E) %>% 
+  mutate(alg='plex',E=as.numeric(E))
 
 ######## Validated Target
 
@@ -53,7 +60,7 @@ fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
 
 
 ######## Join predictions dataset
-db = rbind(tar_r,tar_s,mir_r,mir_s,plex)
+db = rbind(tar_r,tar_s,plex)
 
 #db = rbind(tar_r,tar_s)
 
@@ -76,8 +83,19 @@ for (a in alg){
     n<- length(verified %>% filter(srna==i,v=='t') %>% pull(srna))
     f<- length(verified %>% filter(srna==i,v=='f') %>% pull(srna))
 for (t in seq(0,2300,100)){
-  m<-db %>% filter(id2==i,alg==a) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='t') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
-  z<-db %>% filter(id2==i,alg==a) %>%mutate(r=rank(E))%>% filter(id1%in%(verified %>% filter(srna==i,v=='f') %>% pull(target)),r<t) %>% summarise(n=n()) %>% pull(n)
+ 
+  m<-db %>% filter(id2==i,alg==a) %>%
+    mutate(r=rank(E))%>% 
+    filter(id1%in%(verified %>% filter(srna==i,v=='t') %>% 
+                     pull(target)),r<t) %>% 
+    summarise(n=n()) %>% pull(n)
+  
+  z<-db %>% filter(id2==i,alg==a) %>%
+    mutate(r=rank(E))%>% 
+    filter(id1%in%(verified %>% filter(srna==i,v=='f') %>% 
+                     pull(target)),r<t) %>% 
+    summarise(n=n()) %>% pull(n)
+  
   d<-rbind(d,c(t,i,m/n,z/f,a))
   
 }
@@ -98,7 +116,8 @@ d %>%  mutate_at(.vars = vars(rel,fp,t),as.numeric) %>%
   theme_classic()+
   ylab('True Positive')+
   xlab('False Positive')+
-  scale_color_gradient(name='Threshold - Top Targets',low = 'red',high = 'blue' )+
+  scale_color_gradient(name='Threshold - Top Targets',
+                       low = 'red',high = 'blue' )+
   ggtitle('Roc curve - IntaRNA_sTar single sRNA')+
   geom_abline(slope = 1,intercept = 0)+
   facet_grid(a~srn)
@@ -115,7 +134,7 @@ ggsave('Fig/roc_Sgrs_facet.png', dpi=300)
 d<- data.frame(t=c('a'),srn=c('a'),rel=c('1'),fp=c('1'),a=c('a'))
 
 for (a in alg){
-for (t in seq(0,2300,100)){
+for (t in seq(0,9000,100)){
 
     vt<-verified %>% filter(v=='t')
     vf<-verified %>% filter(v=='f')
