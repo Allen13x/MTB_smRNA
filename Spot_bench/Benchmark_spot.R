@@ -19,29 +19,26 @@ simple_auc <- function(rel, fp){
 
 ##### Import Data #####
 
-### sRNA ryhB
+
 ######## Predictions
 
-tar_r<- read.delim('Predictions/res_tar_r.csv',header = T,sep = ';',
+tar<- aggregate(E~id1+id2,
+                read.delim('Predictions/res_tar.csv',header = T,sep = ';',
                    stringsAsFactors = F) %>% 
-  select(id1,id2,E) %>% 
-  mutate(alg='sTar')
+                  select(id1,id2,E),min) %>% mutate(alg='sTar')
 
-tar<- read.delim('Predictions/res_tar.csv',header = T,sep = ';',
-                   stringsAsFactors = F) %>% 
-  select(id1,id2,E) %>% 
-  mutate(alg='sTar')
-
-mir_r<- read.delim('Predictions/miranda_r.csv',header=T,
+mir<- aggregate(E~id1+id2,read.delim('Predictions/miranda.csv',header=T,
                    sep=';',stringsAsFactors = F) %>% 
   rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% 
-  select(id1,id2,E) %>% mutate(alg='mir')
+  select(id1,id2,E),min) %>% mutate(alg='mir')
 
-plex <- read.delim('Predictions/plex1.csv',header = F,
+plex <- aggregate(E~id1+id2,
+                  read.delim('Predictions/plex1.csv',header = F,
                    col.names =c('id1','id2','range1','range2','E'),
                    sep=';',stringsAsFactors = F) %>% 
-  select(id1,id2,E) %>% 
-  mutate(alg='plex',E=as.numeric(E)) %>% filter(id1!='null')
+                    select(id1,id2,E) %>% 
+                    mutate(E=as.numeric(E)) %>% filter(id1!='null'),min) %>% 
+  mutate(alg='plex')
 
 ######## Validated Target
 
@@ -62,11 +59,6 @@ fp_r <- c('bfr','sufB','fhuF','sufA','fhuA',
 # fp_r <- c('b3336','b1683','b4367','b1684',
 #           'b0150','b1905','b2832')
 
-### sRNA sgrS
-######## Predictions
-tar_s<- read.delim('Predictions/res_tar_s.csv',header = T,sep = ';',stringsAsFactors = F)%>% mutate(id2='sgrS')%>% select(id1,id2,E) %>% mutate(alg='sTar')
-
-mir_s<- read.delim('Predictions/miranda_s.csv',header=T,sep=';',stringsAsFactors = F) %>% rename(id2=Seq1,id1=Seq2,E=Max.Energy) %>% select(id1,id2,E)%>% mutate(alg='mir')
 
 ######## Validated Target
 
@@ -214,23 +206,24 @@ ggsave('Fig/roc_Sgrs.png', dpi=300)
 
 # Intersection method -----------------------------------------------------
 
-# Double check - rank by sTar
-db_c<-inner_join(tar,plex,by=c('id1','id2')) %>% 
-  mutate(alg='mix_sTar',E=E.x) %>% select(-E.x,-E.y,-alg.x,-alg.y)
-# Double check - rank by plex
-db_p<-inner_join(tar,plex,by=c('id1','id2')) %>% 
-  mutate(alg='mix_plex',E=E.y) %>% select(-E.x,-E.y,-alg.x,-alg.y)
+# # Double check - rank by sTar
+# db_c<-inner_join(tar,plex,by=c('id1','id2')) %>% 
+#   mutate(alg='mix_sTar',E=E.x) %>% select(-E.x,-E.y,-alg.x,-alg.y)
+# # Double check - rank by plex
+# db_p<-inner_join(tar,plex,by=c('id1','id2')) %>% 
+#   mutate(alg='mix_plex',E=E.y) %>% select(-E.x,-E.y,-alg.x,-alg.y)
 
 # Double check - rank by min
 
-db_b<-aggregate(E~id1+id2,
-          inner_join(tar,plex,by=c('id1','id2')) %>%
-            mutate(E.x=rank(E.x),E.y=rank(E.y)) %>% 
-            gather(var,E,E.x,E.y),min) %>%  tibble() %>% mutate(alg='mix_both')
+db_b<-aggregate(E~id1+id2,rbind(mir,tar,plex) %>% group_by(alg) %>% 
+                  mutate(E=rank(E)) %>% ungroup() %>% 
+                  add_count(E) %>% filter(n>1),mean) %>% tibble() %>% mutate(alg='mix_2')
 
-
+db_t<-aggregate(E~id1+id2,rbind(mir,tar,plex) %>% group_by(alg) %>% 
+                  mutate(E=rank(E)) %>% ungroup() %>% 
+                  add_count(E) %>% filter(n>2),mean) %>% tibble() %>% mutate(alg='mix_3')
 # Aggregate algorithms predictions
-db<-rbind(tar,plex,db_c,db_p,db_b)
+db<-rbind(tar,plex,db_b,mir,db_t)
   
 aggregate(E~id1+id2+alg,db,min) %>% tibble()->db
 
