@@ -21,6 +21,15 @@ simple_auc <- function(rel, fp){
 
 
 ######## Predictions
+inta <-  aggregate(E~id1+id2,
+                   read.delim('Predictions/res_inta.csv',header = T,sep = ';',
+                              stringsAsFactors = F) %>% 
+                     select(id1,id2,E),min) %>% mutate(alg='inta')
+
+duplex<- aggregate(E~id1+id2,
+          read.delim('Predictions/res_duplex.csv',header = T,sep = ';',
+                     stringsAsFactors = F) %>% 
+            select(id1,id2,E),min) %>% mutate(alg='duplex')
 
 tar<- aggregate(E~id1+id2,
                 read.delim('Predictions/res_tar.csv',header = T,sep = ';',
@@ -215,15 +224,16 @@ ggsave('Fig/roc_Sgrs.png', dpi=300)
 
 # Double check - rank by min
 
-db_b<-aggregate(E~id1+id2,rbind(mir,tar,plex) %>% group_by(alg) %>% 
-                  mutate(E=rank(E)) %>% ungroup() %>% 
-                  add_count(E) %>% filter(n>1),mean) %>% tibble() %>% mutate(alg='mix_2')
+db_int<- rbind(tar, inta) %>% group_by(alg) %>% 
+  mutate(E=rank(E)) %>% ungroup() %>% 
+  add_count(id1,id2)
 
-db_t<-aggregate(E~id1+id2,rbind(mir,tar,plex) %>% group_by(alg) %>% 
-                  mutate(E=rank(E)) %>% ungroup() %>% 
-                  add_count(E) %>% filter(n>2),mean) %>% tibble() %>% mutate(alg='mix_3')
+
+db_b<-aggregate(E~id1+id2, db_int%>% filter(n>1),median) %>% tibble() %>% mutate(alg='mix_2')
+
+db_t<-aggregate(E~id1+id2,db_int %>% filter(n>2),median) %>% tibble() %>% mutate(alg='mix_3')
 # Aggregate algorithms predictions
-db<-rbind(tar,plex,db_b,mir,db_t)
+db<-rbind(inta,tar,plex,duplex,db_b,mir,db_t)
   
 aggregate(E~id1+id2+alg,db,min) %>% tibble()->db
 
@@ -279,7 +289,7 @@ d  %>%
 ggsave('Fig/roc_algs_full_genome.png', dpi=300)
 
 
-# Ranking algorithms
+4# Ranking algorithms
 auc=c()
 
 for (i in d %>% select(a) %>% distinct() %>% pull(a)){
