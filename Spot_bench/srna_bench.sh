@@ -40,8 +40,13 @@ i=1
 while (($i < "$(wc -l Raw/plex | awk '{print $1}')")) 
 do
 	j=$i+2
-	cat Raw/plex | awk "NR >=$i && NR <= $j" | awk '{print}' ORS=' ' | sed 's/  */ /g' | sed 's/ /\t/g' | awk '{print $1, $2, $4, $6, $7}' | sed 's/ /;/g' | sed 's/[>()]//g'>> Predictions/plex.csv 
-	i=$i+3	
+	        string=$(cat Raw/plex | awk "NR== $j")
+        if [[ $string == *"&"* ]]
+                then
+                        cat Raw/plex | awk "NR >=$i && NR <= $j" | awk '{print}' ORS=' ' | sed 's/  */ /g' | sed 's/ /\>                        i=$i+3
+                else
+                        i=$i+1
+        fi
 done
 
 

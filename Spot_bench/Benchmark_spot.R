@@ -50,17 +50,17 @@ ver_r <- c('acnB','erpA','fepB','fur','sdhC',
            'shiA','cirA','iscS','nirB','hdeA',
            'cysE','zapB','frdA')
 
-ver_r<- c('b0118','b0156','b0592','b0683','b0721',
-          'b0722','b1531','b1612','b1656','b1778',
-          'b1981','b2155','b2530','b3365','b3510',
-          'b3607','b3928','b4154')
+# ver_r<- c('b0118','b0156','b0592','b0683','b0721',
+#           'b0722','b1531','b1612','b1656','b1778',
+#           'b1981','b2155','b2530','b3365','b3510',
+#           'b3607','b3928','b4154')
 
 ######## Validated non-Target
 fp_r <- c('bfr','sufB','fhuF','sufA','fhuA',
           'fthA','ygdQ')
 
-fp_r <- c('b3336','b1683','b4367','b1684',
-          'b0150','b1905','b2832')
+# fp_r <- c('b3336','b1683','b4367','b1684',
+#           'b0150','b1905','b2832')
 
 ### sRNA sgrS
 ######## Predictions
@@ -73,17 +73,17 @@ mir_s<- read.delim('Predictions/miranda_s.csv',header=T,sep=';',stringsAsFactors
 ver_s <- c('ptsG','purR','manX','manY',
            'folE','asd','yigL','adiY')
 
-ver_s <- c('b1101','b1658','b1817','b1818',
-         'b2153','b3433','b3826','b4116')
+# ver_s <- c('b1101','b1658','b1817','b1818',
+#          'b2153','b3433','b3826','b4116')
 
 ######## Validated non-Target
 
 fp_s <- c('zinT','cusF','ykgM','ykgO','znuA',
           'yebA','purR','yeeD','znuC',
           'ydjN','malK','mglB')
-
-fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
-        'b1178','b2012','b1858','b1729','b4035','b2150')
+# 
+# fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
+#         'b1178','b2012','b1858','b1729','b4035','b2150')
 
 
 
