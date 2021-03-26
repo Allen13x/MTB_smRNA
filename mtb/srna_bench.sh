@@ -5,20 +5,11 @@ mkdir Raw
 
 ### Run IntaRNA sTar prediction for ryhB sRNA
 
-IntaRNA3 -q query/r.fasta -t target/NC_000913.fa --threads 4 --personality=IntaRNAsTar --outMode=C --out Predictions/res_tar_r.csv
-
-
-### Run IntaRNA sTar prediction for sgrS sRNA
-
-IntaRNA3 -q query/s.fasta -t target/NC_000913.fa --threads 4 --personality=IntaRNAsTar --outMode=C --out Predictions/res_tar_s.csv
-
-## Run IntaRNA exact prediction for query sRNA
-
-IntaRNA3 -q query/q.fasta -t target/NC_000913.fa --personality=IntaRNAexact --threads 4 --outmode=C --out Predictions/res_up.csv
+IntaRNA3 -q query/q.fasta -t target/target.fa --threads 0 --personality=IntaRNAsTar --outMode=C --out Predictions/res_tar.csv
 
 ## Run IntaRNA duplex prediction for query sRNA
 
-IntaRNA3 -q query/q.fasta -t target/NC_000913.fa --personality=IntaRNAduplex --threads 4 --outmode=C --out Predictions/res_plex.csv
+IntaRNA3 -q query/q.fasta -t target/target.fa --personality=IntaRNAduplex --threads 0 --outmode=C --out Predictions/res_plex.csv
 
 ### Run miranda prediction for ryhB sRNA
 
