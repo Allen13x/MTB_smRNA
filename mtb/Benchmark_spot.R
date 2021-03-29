@@ -42,7 +42,7 @@ mir<- aggregate(E~id1+id2,read.delim('Predictions/miranda.csv',header=T,
   select(id1,id2,E),min) %>% mutate(alg='mir')
 
 plex <- aggregate(E~id1+id2,
-                  read.delim('Predictions/plex1.csv',header = F,
+                  read.delim('Predictions/plex.csv',header = F,
                    col.names =c('id1','id2','range1','range2','E'),
                    sep=';',stringsAsFactors = F) %>% 
                     select(id1,id2,E) %>% 
@@ -51,10 +51,8 @@ plex <- aggregate(E~id1+id2,
 
 ######## Validated Target
 
-ver_r <- c('acnB','erpA','fepB','fur','sdhC',
-           'sdhD','marA','fumA','sodB','msrB',
-           'shiA','cirA','iscS','nirB','hdeA',
-           'cysE','zapB','frdA')
+ver_r <- c('dnaB','glyR','espE','espF','eccCa1','PE35',
+           'mycP1','mce1D','mce1F','PE5')
 
 # ver_r<- c('b0118','b0156','b0592','b0683','b0721',
 #           'b0722','b1531','b1612','b1656','b1778',
@@ -69,22 +67,6 @@ fp_r <- c('bfr','sufB','fhuF','sufA','fhuA',
 #           'b0150','b1905','b2832')
 
 
-######## Validated Target
-
-ver_s <- c('ptsG','purR','manX','manY',
-           'folE','asd','yigL','adiY')
-
-# ver_s <- c('b1101','b1658','b1817','b1818',
-#          'b2153','b3433','b3826','b4116')
-
-######## Validated non-Target
-
-fp_s <- c('zinT','cusF','ykgM','ykgO','znuA',
-          'yebA','purR','yeeD','znuC',
-          'ydjN','malK','mglB')
-# 
-# fp_s <- c('b1973','b0573','b0296','b4506','b1857','b1856',
-#         'b1178','b2012','b1858','b1729','b4035','b2150')
 
 
 
@@ -95,9 +77,9 @@ db = rbind(tar_r,tar_s,plex)
 #db = rbind(tar_r,tar_s)
 
 ######## Verified dataset target
-verified <- data.frame(v=c(rep('t',18),rep('f',7),rep('t',8),rep('f',12)),
-                       srna=c(rep('ryhB',25),rep('sgrS',20)),
-                       target=c(ver_r,fp_r,ver_s,fp_s))
+verified <- data.frame(v=c(rep('t',10),rep('f',7)),
+                       srna=c(rep('B11',17)),
+                       target=c(ver_r,fp_r))
 
 # verified_1 <- verified
 
@@ -233,7 +215,7 @@ db_b<-aggregate(E~id1+id2, db_int%>% filter(n>1),median) %>% tibble() %>% mutate
 
 db_t<-aggregate(E~id1+id2,db_int %>% filter(n>2),median) %>% tibble() %>% mutate(alg='mix_3')
 # Aggregate algorithms predictions
-db<-rbind(inta,tar,plex,duplex,db_b,mir,db_t)
+db<-rbind(inta,tar,plex,duplex,db_b)
   
 aggregate(E~id1+id2+alg,db,min) %>% tibble()->db
 
@@ -289,7 +271,7 @@ d  %>%
 ggsave('Fig/roc_algs_full_genome.png', dpi=300)
 
 
-4# Ranking algorithms
+# Ranking algorithms
 auc=c()
 
 for (i in d %>% select(a) %>% distinct() %>% pull(a)){

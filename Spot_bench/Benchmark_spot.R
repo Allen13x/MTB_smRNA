@@ -233,7 +233,7 @@ db_b<-aggregate(E~id1+id2, db_int%>% filter(n>1),median) %>% tibble() %>% mutate
 
 db_t<-aggregate(E~id1+id2,db_int %>% filter(n>2),median) %>% tibble() %>% mutate(alg='mix_3')
 # Aggregate algorithms predictions
-db<-rbind(inta,tar,plex,duplex,db_b,mir,db_t)
+db<-rbind(inta,tar,plex,duplex,db_b,mir)
   
 aggregate(E~id1+id2+alg,db,min) %>% tibble()->db
 
