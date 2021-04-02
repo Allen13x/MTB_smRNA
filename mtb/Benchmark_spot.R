@@ -24,17 +24,17 @@ simple_auc <- function(rel, fp){
 inta <-  aggregate(E~id1+id2,
                    read.delim('Predictions/res_inta.csv',header = T,sep = ';',
                               stringsAsFactors = F) %>% 
-                     select(id1,id2,E),min) %>% mutate(alg='inta')
+                     select(id1,id2,E),min) %>% mutate(alg='inta') %>% separate(id1,c('id1'),sep = '\\|')
 
 duplex<- aggregate(E~id1+id2,
           read.delim('Predictions/res_duplex.csv',header = T,sep = ';',
                      stringsAsFactors = F) %>% 
-            select(id1,id2,E),min) %>% mutate(alg='duplex')
+            select(id1,id2,E),min) %>% mutate(alg='duplex') %>% separate(id1,c('id1'),sep = '\\|')
 
 tar<- aggregate(E~id1+id2,
                 read.delim('Predictions/res_tar.csv',header = T,sep = ';',
                    stringsAsFactors = F) %>% 
-                  select(id1,id2,E),min) %>% mutate(alg='sTar')
+                  select(id1,id2,E),min) %>% mutate(alg='sTar') %>% separate(id1,c('id1'),sep = '\\|')
 
 mir<- aggregate(E~id1+id2,read.delim('Predictions/miranda.csv',header=T,
                    sep=';',stringsAsFactors = F) %>% 
@@ -47,21 +47,27 @@ plex <- aggregate(E~id1+id2,
                    sep=';',stringsAsFactors = F) %>% 
                     select(id1,id2,E) %>% 
                     mutate(E=as.numeric(E)) %>% filter(id1!='null'),min) %>% 
-  mutate(alg='plex')
+  mutate(alg='plex') %>% separate(id1,c('id1'),sep = '\\|')
 
 ######## Validated Target
+v<- c(9,7,4)
 
-ver_r <- c('dnaB','glyR','espE','espF','eccCa1','PE35',
-           'mycP1','mce1D','mce1F','PE5')
 
-# ver_r<- c('b0118','b0156','b0592','b0683','b0721',
-#           'b0722','b1531','b1612','b1656','b1778',
-#           'b1981','b2155','b2530','b3365','b3510',
-#           'b3607','b3928','b4154')
+ver<-c('Rv0058','Rv3864','Rv3865','Rv3870','Rv3872',
+       'Rv3883c','Rv0172','Rv0174','Rv0285', ##<----B11
+       'Rv2093c','Rv2618','Rv0092','Rv2221c','Rv0378',
+       'Rv2013','Rv2997',#<----Mcr7
+       'Rv1876','Rv3106','Rv0009','Rv0069c' #<----MrsI
+       ) 
+
+# ver_r <- c('dnaB','espE','espF','eccCa1','PE35',
+#            'mycP1','mce1D','mce1F','PE5')
+
 
 ######## Validated non-Target
-fp_r <- c('bfr','sufB','fhuF','sufA','fhuA',
-          'fthA','ygdQ')
+fp <- c('	Rv1876','Rv3841')
+
+# fp <- c('bfrA','bfrB','sufR')
 
 # fp_r <- c('b3336','b1683','b4367','b1684',
 #           'b0150','b1905','b2832')
@@ -77,9 +83,9 @@ db = rbind(tar_r,tar_s,plex)
 #db = rbind(tar_r,tar_s)
 
 ######## Verified dataset target
-verified <- data.frame(v=c(rep('t',10),rep('f',7)),
-                       srna=c(rep('B11',17)),
-                       target=c(ver_r,fp_r))
+verified <- data.frame(v=c(rep('t',length(ver)),rep('f',3*length(fp))),
+                       srna=c(rep('B11',v[1]),rep('Mcr7',v[2]),rep('MrsI',v[3]),rep(v,each=2)),
+                       target=c(ver,fp,fp,fp))
 
 # verified_1 <- verified
 
@@ -211,7 +217,8 @@ db_int<- rbind(tar, inta) %>% group_by(alg) %>%
   add_count(id1,id2)
 
 
-db_b<-aggregate(E~id1+id2, db_int%>% filter(n>1),median) %>% tibble() %>% mutate(alg='mix_2')
+db_b<-aggregate(E~id1+id2, db_int%>% filter(n>1),median) %>% 
+  tibble() %>% mutate(alg='mix_2')
 
 db_t<-aggregate(E~id1+id2,db_int %>% filter(n>2),median) %>% tibble() %>% mutate(alg='mix_3')
 # Aggregate algorithms predictions
@@ -268,7 +275,15 @@ d  %>%
   facet_wrap(~a)
 
 
-ggsave('Fig/roc_algs_full_genome.png', dpi=300)
+
+
+d %>% 
+  ggplot(aes(x=t,y=rel,col=a)) +
+  geom_line(lwd=2)+
+  theme_bw()
+  
+  
+ggsave('Fig/TP_algs_full_genome.png', dpi=300)
 
 
 # Ranking algorithms
