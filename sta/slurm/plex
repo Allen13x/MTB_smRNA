@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name=RNAplex
+#SBATCH --partition=workq  #workq is the default and unique queue, you do not need to specify.
+#SBATCH --account dimarco.federico
+#SBATCH --mem=15GB  # amout of RAM in MB required (and max ram available). Xor "--mem-per-cpu"
+#SBATCH --time=INFINITE  ## OR #SBATCH --time=10:00 means 10 minutes OR --time=01:00:00 means 1 hour
+#SBATCH --ntasks=1  # nubmer of required cores
+#SBATCH --nodes=1  # not really useful for not mpi jobs
+#SBATCH --mail-type=END ## BEGIN, END, FAIL or ALL
+#SBATCH --mail-user=dimarco.federico@hsr.it
+#SBATCH --error="/beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/slurm/plex.err"
+#SBATCH --output="/beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/slurm/plex.out"
+
+
+(source /opt/common/tools/ric.cosr/miniconda3/bin/activate;
+conda activate /home/dimarco.federico/envs/srna;
+RNAplex -q /beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/query/q.fasta -t /beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/target/target.fa > /beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/Raw/plex;
+/beegfs/scratch/ric.cirillo/dimarco.federico/srna/mtb/un_plex.sh)
