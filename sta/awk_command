@@ -1,4 +1,0 @@
-##### To linearize fasta sequences
-awk '/^>/ {printf(n%sn,/bin/bash);next; } { printf(%s,/bin/bash);}  END {printf(n);}'
-##### To select specific part of fasta headers
-awk '{if($1~">"){gsub(".*locus_tag=","");gsub("\].*","");print ">"$0} else {print $0}}'
