@@ -1,6 +1,0 @@
-##### To linearize fasta sequences
-awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}'
-##### To select specific part of fasta headers
-awk '{if($1~">"){gsub(".*locus_tag=","");gsub("\].*","");print ">"$0} else {print $0}}'
-##### Convert gff3 to bed
-awk -v OFS='\t' -v FS='\t' '$3 == "gene" {print $1, $4-1, $5, $1 ":" $4 "-" $5 ":" $9}'

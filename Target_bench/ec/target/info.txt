@@ -1,3 +1,0 @@
-Escherichia coli str. K-12 substr. MG1655
-
-upfromstartpos_200_down_100
