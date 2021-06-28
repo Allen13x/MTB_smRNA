@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 
 //-------------------------channels----------------------------//
-
+params.train=false
 params.outdir = "results"
-params.list='b.csv'
+params.list='path.csv'
 params.sc = 8
 
 scan = Channel.value("${params.sc}")
@@ -18,7 +18,8 @@ list= file("${params.list}")
 //------------------------Process_1---------------------------//
 process Export_list{
 conda 'conda-forge::numpy conda-forge::pandas'
-
+when:
+params.train
 
 input:
 file list
@@ -30,9 +31,9 @@ file("*.csv") into p2a
 #!/usr/bin/env python
 import numpy as np
 import pandas as pd
-df=pd.read_csv('$list',delimiter=';',names=['mrna','srna','spec','top','s','mf','sf'])
-df['ms']=df[['s','mrna']].agg('_'.join,axis=1)
-df=df[['ms','srna','mf','sf','spec']]
+df=pd.read_csv('$list',delimiter=';',names=['srna','mrna','spec','top','s','sf','mf'])
+df['ss']=df[['s','srna']].agg('_'.join,axis=1)
+df=df[['ss','mrna','sf','mf','spec']]
 df.to_csv('tp_couple.csv',sep=';',header=False,index=False)
 """
 
@@ -42,6 +43,8 @@ df.to_csv('tp_couple.csv',sep=';',header=False,index=False)
 //------------------------Process_2---------------------------//
 process Blast{
 conda 'bioconda::blast'
+when:
+params.train
 
 input:
 file(p1)
@@ -116,7 +119,8 @@ cd ..
 //------------------------Process_3---------------------------//
 process Blasted_list{
 conda 'conda-forge::numpy conda-forge::pandas'
-
+when:
+params.train
 
 
 input:
@@ -129,15 +133,15 @@ file("*.csv") into p3
 #!/usr/bin/env python
 import pandas as pd
 import numpy as np
-df=pd.read_csv("$p2a",delimiter=';',names=['ms','srna','mf','sf','spec'])
-df2=pd.read_csv("$p2",delimiter=';',names=['srna','fasta','spec','boh'])
-df3=pd.merge(df,df2,on=['srna','spec'],how='outer')
+df=pd.read_csv("$p2a",delimiter=';',names=['ss','mrna','sf','mf','spec'])
+df2=pd.read_csv("$p2",delimiter=';',names=['mrna','fasta','spec','boh'])
+df3=pd.merge(df,df2,on=['mrna','spec'],how='outer')
 df3['fasta']=df3['fasta'].str.lower()
 df3['y.l']= df3['fasta'].str.len()
-df3['x.l']=df3['sf'].str.len()
-df3['fasta']=np.where(df3['y.l']>6000,df3['sf'],np.where(df3['y.l']>df3['x.l'],df3['fasta'],df3['sf']))
-df3=df3[['ms','srna','mf','fasta','spec']]
-df3=df3.sort_values(by=['ms'])
+df3['x.l']=df3['mf'].str.len()
+df3['fasta']=np.where(df3['y.l']>6000,df3['mf'],np.where(df3['y.l']>df3['x.l'],df3['fasta'],df3['mf']))
+df3=df3[['ss','mrna','sf','fasta','spec']]
+df3=df3.sort_values(by=['ss'])
 df3.to_csv('btp_couple.csv',sep=',',header=True,index=False)
 """
 
@@ -146,11 +150,12 @@ df3.to_csv('btp_couple.csv',sep=',',header=True,index=False)
 //------------------------Process_4---------------------------//
 process Inta{
 conda 'bioconda::intarna'
-
+when:
+params.train
 
 
 input:
-set srna, mrna, mf, fasta, spec from p3.splitCsv(header:true).map{ row-> tuple(row.ms, row.srna, row.mf, row.fasta,row.spec)}
+set srna, mrna, sf, fasta, spec from p3.splitCsv(header:true).map{ row-> tuple(row.ss, row.mrna, row.sf, row.fasta,row.spec)}
 
 
 output:
@@ -167,7 +172,7 @@ mkdir input/${srna}/mrna
 mkdir input/${srna}/srna
 
 echo ">"${srna} > input/${srna}/srna/${srna}.fasta
-echo $mf >> input/${srna}/srna/${srna}.fasta
+echo $sf >> input/${srna}/srna/${srna}.fasta
 echo ">"$mrna >> input/${srna}/mrna/${mrna}.fasta
 echo $fasta >> input/${srna}/mrna/${mrna}.fasta
 
@@ -192,7 +197,8 @@ cp -r input/* false/
 //------------------------Process_5---------------------------//
 process Cut_false{
 conda 'conda-forge::biopython conda-forge::numpy conda-forge::pandas'
-
+when:
+params.train
 
 
 input:
@@ -223,8 +229,14 @@ ofile.close
 }
 
 
-dataset=p4i.concat(p5f)
-dataset.into{ mrna_dataset;srna_dataset }
+
+
+dlist=Channel
+    .fromPath(params.list)
+    .splitCsv(header:true)
+    .map{ row-> tuple(row.mrna,row.i, row.srna, file(row.pm),file(row.ps))}
+dset=p4i.concat(p5f).mix(dlist)
+dset.into{ mrna_dataset;srna_dataset }
 
 
 //------------------------Process_6---------------------------//
