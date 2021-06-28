@@ -1,0 +1,49 @@
+Jun-28 16:08:19.997 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Matrix_maker.nf --path path.csv -resume
+Jun-28 16:08:20.173 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.10.0
+Jun-28 16:08:20.200 [main] INFO  nextflow.cli.CmdRun - Launching `Matrix_maker.nf` [magical_cori] - revision: f38ae82c2e
+Jun-28 16:08:20.351 [main] DEBUG nextflow.Session - Session uuid: d8222e78-750d-44ca-933e-801621e82979
+Jun-28 16:08:20.352 [main] DEBUG nextflow.Session - Run name: magical_cori
+Jun-28 16:08:20.361 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jun-28 16:08:20.379 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 20.10.0 build 5430
+  Created: 01-11-2020 15:14 UTC (16:14 CEST)
+  System: Linux 4.19.128-microsoft-standard
+  Runtime: Groovy 3.0.5 on OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 11751@DESKTOP-SGU50A7 [127.0.1.1]
+  CPUs: 8 - Mem: 15.6 GB (12.9 GB) - Swap: 0 (0)
+Jun-28 16:08:20.425 [main] DEBUG nextflow.Session - Work-dir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work [v9fs]
+Jun-28 16:08:20.426 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/bin
+Jun-28 16:08:20.484 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jun-28 16:08:20.487 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-28 16:08:20.831 [main] DEBUG nextflow.Session - Session start invoked
+Jun-28 16:08:22.289 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-28 16:08:22.310 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: Inta, Export_list, Energy_var_matrix, Target_pred, Cut_false, Create_modified_seqs, Blast, Final_window, Blasted_list
+Jun-28 16:08:22.344 [main] DEBUG nextflow.Session - Session aborted -- Cause: Argument of `file` function cannot be empty
+Jun-28 16:08:22.356 [main] ERROR nextflow.cli.Launcher - Argument of `file` function cannot be empty
+java.lang.IllegalArgumentException: Argument of `file` function cannot be empty
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.Nextflow.file(Nextflow.groovy:146)
+	at nextflow.Nextflow.file(Nextflow.groovy)
+	at nextflow.Nextflow$file.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:217)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:231)
+	at Script_1a8e28f7.runScript(Script_1a8e28f7:13)
+	at nextflow.script.BaseScript.runDsl1(BaseScript.groovy:164)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:200)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:219)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:219)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:127)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:277)
+	at nextflow.cli.Launcher.run(Launcher.groovy:466)
+	at nextflow.cli.Launcher.main(Launcher.groovy:648)

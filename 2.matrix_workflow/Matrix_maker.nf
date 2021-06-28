@@ -3,7 +3,7 @@
 //-------------------------channels----------------------------//
 params.train=false
 params.outdir = "results"
-params.list='path.csv'
+params.list=''
 params.sc = 8
 
 scan = Channel.value("${params.sc}")
@@ -231,10 +231,12 @@ ofile.close
 
 
 
-dlist=Channel
+(dlist) = (params.train
+    ? [Channel.empty()] 
+    : [Channel
     .fromPath(params.list)
     .splitCsv(header:true)
-    .map{ row-> tuple(row.mrna,row.i, row.srna, file(row.pm),file(row.ps))}
+    .map{ row-> tuple(row.mrna,row.i, row.srna, file(row.pm),file(row.ps))}])
 dset=p4i.concat(p5f).mix(dlist)
 dset.into{ mrna_dataset;srna_dataset }
 
@@ -290,20 +292,18 @@ set mrnaID,srnaID, file("res_${mrnaID}_${srnaID}.csv"),i into processed3
 script:
 """
 #!/bin/bash
-IntaRNA3 --personality=IntaRNAsTar -q $ps -t $pm --threads 0 --outmode=C --out res_${mrnaID}_${srnaID}.csv
+IntaRNAsTar -q $ps -t $pm --threads 0 --outmode=C --out res_${mrnaID}_${srnaID}.csv
 """
 }
 
 //------------------------Process_8--------------------------//
-process Heatmap_matrix{
-cache false
+process Energy_var_matrix{
 conda 'conda-forge::numpy conda-forge::pandas'
-publishDir "$outdir/$i", mode: 'copyNoFollow'
 input:
 tuple mrnaID, srnaID, file(datasetFile), i from processed3
 
 output:
-file("*.csv") into fres1
+tuple file("*.csv"),srnaID,mrnaID, i into fres1
 
 script:
 """
@@ -358,6 +358,44 @@ name
 mat.to_csv(name,index=False,header=True)
 """
 }
+
+//------------------------Process_9--------------------------//
+process Final_window{
+conda 'conda-forge::numpy conda-forge::pandas'
+publishDir "$outdir/$i", mode: 'copyNoFollow'
+
+input:
+tuple file(mat),srna,mrna, i from fres1
+
+output:
+file("*.csv") into out1
+ """
+#!/usr/bin/env python 
+import numpy as np
+import pandas as pd
+import os
+
+
+df=pd.read_csv("$mat",delimiter=',')
+
+n=int(df.columns[(np.where((df.iloc[0]==100)))][0])-1
+
+
+cmax=int(np.where(n+100>int(df.shape[1]),int(df.shape[1]),max(n+100,min(df.shape[1],200))))
+cmin=int(np.where(n-99<1,1,min(n-99,max(df.shape[1]-200,1))))
+
+mat=df.iloc[:,cmin:cmax+1]
+name="$i"+'_'+"$srna"+'_'+"$mrna"+'_w.csv'
+mat.to_csv(str(name),index=False,header=True)
+
+"""
+
+}
+
+
+
+
+
 
 //-------------------------summary---------------------------//
 

@@ -1,0 +1,86 @@
+Jun-28 15:17:22.222 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Matrix_maker.nf --train --sc 2 --outdir Train_dataset --list b.csv
+Jun-28 15:17:22.399 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.10.0
+Jun-28 15:17:22.427 [main] INFO  nextflow.cli.CmdRun - Launching `Matrix_maker.nf` [silly_torvalds] - revision: 64f1c7b53c
+Jun-28 15:17:22.591 [main] DEBUG nextflow.Session - Session uuid: 17f5e612-45ce-4b28-8075-9659b8094c25
+Jun-28 15:17:22.591 [main] DEBUG nextflow.Session - Run name: silly_torvalds
+Jun-28 15:17:22.600 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jun-28 15:17:22.620 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 20.10.0 build 5430
+  Created: 01-11-2020 15:14 UTC (16:14 CEST)
+  System: Linux 4.19.128-microsoft-standard
+  Runtime: Groovy 3.0.5 on OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 7836@DESKTOP-SGU50A7 [127.0.1.1]
+  CPUs: 8 - Mem: 15.6 GB (12.9 GB) - Swap: 0 (0)
+Jun-28 15:17:22.657 [main] DEBUG nextflow.Session - Work-dir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work [v9fs]
+Jun-28 15:17:22.658 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/bin
+Jun-28 15:17:22.722 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jun-28 15:17:22.725 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-28 15:17:23.089 [main] DEBUG nextflow.Session - Session start invoked
+Jun-28 15:17:24.681 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-28 15:17:24.696 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: Inta, Export_list, Energy_var_matrix, Target_pred, Cut_false, Create_modified_seqs, Blast, Final_window, Blasted_list
+Jun-28 15:17:24.806 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 15:17:24.806 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 15:17:24.815 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-28 15:17:24.823 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.6 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jun-28 15:17:24.982 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 15:17:24.983 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 15:17:24.997 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 15:17:24.997 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 15:17:25.077 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 15:17:25.078 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 15:17:25.093 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 15:17:25.093 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 15:17:25.098 [Actor Thread 4] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=conda-forge::numpy conda-forge::pandas; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-ef0caeb3b73b89f423efaedcfb37acef
+Jun-28 15:17:25.116 [main] DEBUG nextflow.Session - Session aborted -- Cause: No signature of method: nextflow.extension.OperatorEx.mix() is applicable for argument types: (groovyx.gpars.dataflow.DataflowQueue, ArrayList) values: [DataflowQueue(queue=[]), [DataflowQueue(queue=[DataflowVariable(value=groovyx.gpars.dataflow.operator.PoisonPill@106d77da)])]]
+Possible solutions: mix(groovyx.gpars.dataflow.DataflowReadChannel, [Lgroovyx.gpars.dataflow.DataflowReadChannel;), max(groovyx.gpars.dataflow.DataflowReadChannel, java.util.Comparator), max(groovyx.gpars.dataflow.DataflowReadChannel), max(groovyx.gpars.dataflow.DataflowReadChannel, groovy.lang.Closure), min(groovyx.gpars.dataflow.DataflowReadChannel), min(groovyx.gpars.dataflow.DataflowReadChannel, groovy.lang.Closure)
+Jun-28 15:17:25.159 [main] DEBUG nextflow.Session - The following nodes are still active:
+[process] Export_list
+  status=ACTIVE
+  port 0: (value) bound ; channel: list
+  port 1: (cntrl) -     ; channel: $
+
+[process] Blast
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: p1
+  port 1: (cntrl) -     ; channel: $
+
+[process] Blasted_list
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: p2
+  port 1: (value) OPEN  ; channel: p2a
+  port 2: (cntrl) -     ; channel: $
+
+[process] Inta
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] Cut_false
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jun-28 15:17:25.174 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingMethodException: No signature of method: nextflow.extension.OperatorEx.mix() is applicable for argument types: (groovyx.gpars.dataflow.DataflowQueue, ArrayList) values: [DataflowQueue(queue=[]), [DataflowQueue(queue=[DataflowVariable(value=groovyx.gpars.dataflow.operator.PoisonPill@106d77da)])]]
+Possible solutions: mix(groovyx.gpars.dataflow.DataflowReadChannel, [Lgroovyx.gpars.dataflow.DataflowReadChannel;), max(groovyx.gpars.dataflow.DataflowReadChannel, java.util.Comparator), max(groovyx.gpars.dataflow.DataflowReadChannel), max(groovyx.gpars.dataflow.DataflowReadChannel, groovy.lang.Closure), min(groovyx.gpars.dataflow.DataflowReadChannel), min(groovyx.gpars.dataflow.DataflowReadChannel, groovy.lang.Closure)
+	at nextflow.extension.OpCall.getMethod0(OpCall.groovy:306)
+	at nextflow.extension.OpCall.invoke1(OpCall.groovy:311)
+	at nextflow.extension.OpCall.invoke0(OpCall.groovy:299)
+	at nextflow.extension.OpCall.invoke(OpCall.groovy:159)
+	at nextflow.extension.OpCall.call(OpCall.groovy:113)
+	at nextflow.extension.OperatorEx.invokeExtensionMethod(OperatorEx.groovy:108)
+	at groovy.runtime.metaclass.NextflowDelegatingMetaClass.invokeMethod(NextflowDelegatingMetaClass.java:59)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaClassSite.call(PojoMetaClassSite.java:44)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_540fdc8c.runScript(Script_540fdc8c:241)
+	at nextflow.script.BaseScript.runDsl1(BaseScript.groovy:164)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:200)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:219)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:219)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:127)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:277)
+	at nextflow.cli.Launcher.run(Launcher.groovy:466)
+	at nextflow.cli.Launcher.main(Launcher.groovy:648)

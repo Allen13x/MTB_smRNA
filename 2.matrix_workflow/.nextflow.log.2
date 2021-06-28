@@ -1,0 +1,87 @@
+Jun-28 16:09:07.639 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Matrix_maker.nf --list path.csv -resume
+Jun-28 16:09:07.832 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.10.0
+Jun-28 16:09:07.861 [main] INFO  nextflow.cli.CmdRun - Launching `Matrix_maker.nf` [gigantic_lalande] - revision: 2a6b19f961
+Jun-28 16:09:08.018 [main] DEBUG nextflow.Session - Session uuid: d8222e78-750d-44ca-933e-801621e82979
+Jun-28 16:09:08.019 [main] DEBUG nextflow.Session - Run name: gigantic_lalande
+Jun-28 16:09:08.028 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jun-28 16:09:08.041 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 20.10.0 build 5430
+  Created: 01-11-2020 15:14 UTC (16:14 CEST)
+  System: Linux 4.19.128-microsoft-standard
+  Runtime: Groovy 3.0.5 on OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 11832@DESKTOP-SGU50A7 [127.0.1.1]
+  CPUs: 8 - Mem: 15.6 GB (12.9 GB) - Swap: 0 (0)
+Jun-28 16:09:08.096 [main] DEBUG nextflow.Session - Work-dir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work [v9fs]
+Jun-28 16:09:08.097 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/bin
+Jun-28 16:09:08.160 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jun-28 16:09:08.163 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-28 16:09:08.529 [main] DEBUG nextflow.Session - Session start invoked
+Jun-28 16:09:09.944 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-28 16:09:09.960 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: Inta, Export_list, Energy_var_matrix, Target_pred, Cut_false, Create_modified_seqs, Blast, Final_window, Blasted_list
+Jun-28 16:09:10.088 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.088 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.094 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-28 16:09:10.099 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.6 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jun-28 16:09:10.255 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.256 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.268 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.268 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.347 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.348 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.365 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.366 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.431 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.431 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.459 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.459 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.472 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.472 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.486 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:10.487 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:10.492 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jun-28 16:09:10.493 [main] DEBUG nextflow.Session - Session await
+Jun-28 16:09:10.498 [Actor Thread 8] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=conda-forge::biopython conda-forge::numpy conda-forge::pandas; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-2256954f98cc1d9c451b1cb38fce6e09
+Jun-28 16:09:10.604 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:10.612 [Task submitter] INFO  nextflow.Session - [77/e98835] Submitted process > Create_modified_seqs (1)
+Jun-28 16:09:10.636 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:10.638 [Task submitter] INFO  nextflow.Session - [30/b10389] Submitted process > Create_modified_seqs (3)
+Jun-28 16:09:10.659 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:10.660 [Task submitter] INFO  nextflow.Session - [55/d20c7c] Submitted process > Create_modified_seqs (2)
+Jun-28 16:09:13.409 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Create_modified_seqs (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/55/d20c7ca1b32caa91289c62601908c6]
+Jun-28 16:09:13.444 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: Create_modified_seqs (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/77/e988359a0f56ffb2005cbbc73cebf8]
+Jun-28 16:09:13.455 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: Create_modified_seqs (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/30/b103895393d0e9d6b5a77f77819bad]
+Jun-28 16:09:13.478 [Actor Thread 7] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::intarna; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-79f3abd21c690a6702e93379851be56a
+Jun-28 16:09:13.683 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:13.688 [Task submitter] INFO  nextflow.Session - [ed/21f268] Submitted process > Target_pred (1)
+Jun-28 16:09:13.709 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:13.711 [Task submitter] INFO  nextflow.Session - [ad/4cc1da] Submitted process > Target_pred (2)
+Jun-28 16:09:13.728 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:13.729 [Task submitter] INFO  nextflow.Session - [b4/0a12b7] Submitted process > Target_pred (3)
+Jun-28 16:09:20.305 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Jun-28 16:09:20.335 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] Energy_var_matrix
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] Final_window
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jun-28 16:09:20.337 [main] DEBUG nextflow.Session - Session await > all process finished
+Jun-28 16:09:20.337 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-28 16:09:20.350 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (3)
+Jun-28 16:09:20.362 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (1) -- command: kill -TERM 12033; exit: 1 
+ bash: line 0: kill: (12033) - No such process
+
+Jun-28 16:09:20.370 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (2) -- command: kill -TERM 12039; exit: 1 
+ bash: line 0: kill: (12039) - No such process
+
+Jun-28 16:09:20.376 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (3) -- command: kill -TERM 12045; exit: 1 
+ bash: line 0: kill: (12045) - No such process
+
+Jun-28 16:09:20.378 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=3; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=3; succeedDuration=8.1s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=0; ]
+Jun-28 16:09:20.488 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jun-28 16:09:20.513 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

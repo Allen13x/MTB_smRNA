@@ -1,0 +1,136 @@
+Jun-28 16:09:42.581 [main] DEBUG nextflow.cli.Launcher - $> nextflow run Matrix_maker.nf --train --sc 8 --outdir Train_dataset --list b.csv
+Jun-28 16:09:42.758 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 20.10.0
+Jun-28 16:09:42.785 [main] INFO  nextflow.cli.CmdRun - Launching `Matrix_maker.nf` [hopeful_ptolemy] - revision: 2a6b19f961
+Jun-28 16:09:42.932 [main] DEBUG nextflow.Session - Session uuid: 9edb2d80-aecf-407e-a3b0-4694d949453f
+Jun-28 16:09:42.933 [main] DEBUG nextflow.Session - Run name: hopeful_ptolemy
+Jun-28 16:09:42.942 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jun-28 16:09:42.956 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 20.10.0 build 5430
+  Created: 01-11-2020 15:14 UTC (16:14 CEST)
+  System: Linux 4.19.128-microsoft-standard
+  Runtime: Groovy 3.0.5 on OpenJDK 64-Bit Server VM 1.8.0_152-release-1056-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 12534@DESKTOP-SGU50A7 [127.0.1.1]
+  CPUs: 8 - Mem: 15.6 GB (12.9 GB) - Swap: 0 (0)
+Jun-28 16:09:42.996 [main] DEBUG nextflow.Session - Work-dir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work [v9fs]
+Jun-28 16:09:42.997 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/bin
+Jun-28 16:09:43.057 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jun-28 16:09:43.060 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-28 16:09:43.414 [main] DEBUG nextflow.Session - Session start invoked
+Jun-28 16:09:44.932 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-28 16:09:44.950 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: Inta, Export_list, Energy_var_matrix, Target_pred, Cut_false, Create_modified_seqs, Blast, Final_window, Blasted_list
+Jun-28 16:09:45.081 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.082 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.088 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-28 16:09:45.095 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=15.6 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jun-28 16:09:45.234 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.235 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.251 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.251 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.343 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.344 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.356 [Actor Thread 4] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=conda-forge::numpy conda-forge::pandas; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-ef0caeb3b73b89f423efaedcfb37acef
+Jun-28 16:09:45.360 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.360 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.399 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.400 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.417 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.417 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.429 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.430 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.443 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jun-28 16:09:45.444 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-28 16:09:45.452 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jun-28 16:09:45.453 [main] DEBUG nextflow.Session - Session await
+Jun-28 16:09:45.477 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:45.485 [Task submitter] INFO  nextflow.Session - [42/623e37] Submitted process > Export_list
+Jun-28 16:09:50.425 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: Export_list; status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/42/623e372a5745d16eeea4caebadca2d]
+Jun-28 16:09:50.502 [Actor Thread 4] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::blast; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-cf4bf5c90338562de1dc057c6f995764
+Jun-28 16:09:50.534 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:50.536 [Task submitter] INFO  nextflow.Session - [35/2557e4] Submitted process > Blast
+Jun-28 16:09:57.408 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: Blast; status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/35/2557e446a1938443cdbcc5439bb314]
+Jun-28 16:09:57.479 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:09:57.480 [Task submitter] INFO  nextflow.Session - [ef/bc0bc8] Submitted process > Blasted_list
+Jun-28 16:10:02.425 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Blasted_list; status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/ef/bc0bc8750b0f488b1f5993d2f04644]
+Jun-28 16:10:02.479 [Actor Thread 9] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=bioconda::intarna; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-79f3abd21c690a6702e93379851be56a
+Jun-28 16:10:02.520 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:02.520 [Task submitter] INFO  nextflow.Session - [41/28da98] Submitted process > Inta (1)
+Jun-28 16:10:02.537 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:02.539 [Task submitter] INFO  nextflow.Session - [ce/77c677] Submitted process > Inta (3)
+Jun-28 16:10:02.558 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:02.559 [Task submitter] INFO  nextflow.Session - [51/44919e] Submitted process > Inta (2)
+Jun-28 16:10:03.744 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: Inta (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/41/28da982cd68915ced958603b71b576]
+Jun-28 16:10:03.782 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: Inta (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/51/44919e0b5cc7c9d4cfe4bb84ea32cb]
+Jun-28 16:10:03.815 [Actor Thread 11] DEBUG nextflow.conda.CondaCache - Conda found local env for environment=conda-forge::biopython conda-forge::numpy conda-forge::pandas; path=/mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/conda/env-2256954f98cc1d9c451b1cb38fce6e09
+Jun-28 16:10:03.844 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: Inta (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/ce/77c677f92f5894b0a45b1921797c74]
+Jun-28 16:10:03.849 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:03.850 [Task submitter] INFO  nextflow.Session - [30/f04039] Submitted process > Create_modified_seqs (1)
+Jun-28 16:10:03.871 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:03.874 [Task submitter] INFO  nextflow.Session - [be/9a115b] Submitted process > Cut_false (1)
+Jun-28 16:10:03.908 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:03.910 [Task submitter] INFO  nextflow.Session - [e7/d7a239] Submitted process > Create_modified_seqs (2)
+Jun-28 16:10:03.928 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:03.930 [Task submitter] INFO  nextflow.Session - [fa/d1c045] Submitted process > Cut_false (2)
+Jun-28 16:10:04.290 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:04.290 [Task submitter] INFO  nextflow.Session - [1e/dea5a7] Submitted process > Create_modified_seqs (3)
+Jun-28 16:10:04.308 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:04.312 [Task submitter] INFO  nextflow.Session - [79/18a622] Submitted process > Cut_false (3)
+Jun-28 16:10:07.429 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: Create_modified_seqs (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/e7/d7a239c4e46a55315ee2ac4a6909e5]
+Jun-28 16:10:07.451 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: Create_modified_seqs (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/1e/dea5a779b411abe8e6b45973dd0cef]
+Jun-28 16:10:07.545 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:07.546 [Task submitter] INFO  nextflow.Session - [87/dc5bf1] Submitted process > Target_pred (1)
+Jun-28 16:10:07.564 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:07.565 [Task submitter] INFO  nextflow.Session - [93/7018c3] Submitted process > Target_pred (2)
+Jun-28 16:10:07.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: Create_modified_seqs (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/30/f040398da8aeb6679ac3eb17ac7391]
+Jun-28 16:10:07.861 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:07.862 [Task submitter] INFO  nextflow.Session - [bc/64eb70] Submitted process > Target_pred (3)
+Jun-28 16:10:10.756 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: Cut_false (1); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/be/9a115ba0f58f2c053518112aff265e]
+Jun-28 16:10:10.790 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: Cut_false (2); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/fa/d1c04588a63324734f950327b5e8e3]
+Jun-28 16:10:10.876 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:10.877 [Task submitter] INFO  nextflow.Session - [aa/b9322e] Submitted process > Create_modified_seqs (4)
+Jun-28 16:10:10.885 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: Cut_false (3); status: COMPLETED; exit: 0; error: -; workDir: /mnt/c/Users/Berse/OneDrive/Documents/Master_BFG/Tirocinio/Data/Inta_bench/srna/2.matrix_workflow/work/79/18a6228894858b05a80702ce201fff]
+Jun-28 16:10:10.982 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:10.983 [Task submitter] INFO  nextflow.Session - [e9/e1a27b] Submitted process > Create_modified_seqs (5)
+Jun-28 16:10:11.006 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jun-28 16:10:11.007 [Task submitter] INFO  nextflow.Session - [6c/510154] Submitted process > Create_modified_seqs (6)
+Jun-28 16:10:15.638 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Jun-28 16:10:15.686 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] Target_pred
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] Energy_var_matrix
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] Final_window
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jun-28 16:10:15.688 [main] DEBUG nextflow.Session - Session await > all process finished
+Jun-28 16:10:15.688 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-28 16:10:15.702 [main] WARN  n.processor.TaskPollingMonitor - Killing pending tasks (6)
+Jun-28 16:10:15.715 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (1) -- command: kill -TERM 13235; exit: 1 
+ bash: line 0: kill: (13235) - No such process
+
+Jun-28 16:10:15.721 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (2) -- command: kill -TERM 13240; exit: 1 
+ bash: line 0: kill: (13240) - No such process
+
+Jun-28 16:10:15.727 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Target_pred (3) -- command: kill -TERM 13247; exit: 1 
+ bash: line 0: kill: (13247) - No such process
+
+Jun-28 16:10:15.734 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Create_modified_seqs (4) -- command: kill -TERM 13353; exit: 1 
+ bash: line 0: kill: (13353) - No such process
+
+Jun-28 16:10:15.743 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Create_modified_seqs (5) -- command: kill -TERM 13357; exit: 1 
+ bash: line 0: kill: (13357) - No such process
+
+Jun-28 16:10:15.753 [main] DEBUG nextflow.executor.LocalTaskHandler - Unable to kill Create_modified_seqs (6) -- command: kill -TERM 13360; exit: 1 
+ bash: line 0: kill: (13360) - No such process
+
+Jun-28 16:10:15.756 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=12; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=6; succeedDuration=50.7s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=6; peakCpus=6; peakMemory=0; ]
+Jun-28 16:10:15.802 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jun-28 16:10:15.826 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
