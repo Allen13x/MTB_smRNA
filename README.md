@@ -65,7 +65,7 @@ and use the header: mrna;i;srna;pm;ps
 
 Use the following code to launch the pipeline
 ```
-nextflow run ../2.Matrix_workflow/Matrix_maker.nf --list INPUT
+nextflow run ../2.matrix_workflow/Matrix_maker.nf --list INPUT
 ```
 This will produce a results/ folder containing the energy variation matrixes for all the couples. 
 
