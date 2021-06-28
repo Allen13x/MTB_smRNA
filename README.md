@@ -36,7 +36,7 @@ smRNA;mRNA;NCBI Reference Sequence;TAXID;commonID;smRNA sequence;mRNA sequence
 
 Use the following code to launch the pipeline
 ```
-nextflow run Matrix_maker.nf --train --list INPUT
+nextflow run Matrix_maker.nf --train --list INPUT --outdir Train_dataset
 ```
 Replace INPUT with the path to the input file
 
