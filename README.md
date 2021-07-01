@@ -28,7 +28,9 @@ The predictions from each algorithm will be stored in the Predictions/ folder.
 
 The Benchmark.R script will compare the AUC of each algorithm and joint predictions and produce two figures in Fig/ folder. (True Positive and False Positive targets must be provied in the script)
 
-## 2.Matrix_workflow
+## 2.Target_scan
+
+### req1.yml
 
 A nextflow pipeline to produce the training set for the Tensorflow model is contained in the script Matrix_maker.nf. The input file must have the format:
 
@@ -40,12 +42,16 @@ nextflow run Matrix_maker.nf --train --list INPUT --outdir Train_dataset
 ```
 Replace INPUT with the path to the input file
 
+### req2.yml
+
 The code will produce a Train_dataset folder with the energy variation matrixes inside the two folders t and f (Labels for the model training)
 
 
-The codes inside the jupyter notebook TF.ipynb will create, train and store the model.
+The codes inside tf.py will create, train and store the model.
 
 ## 3.Host-Pathogen_Interactions
+
+### req1.txt
 
 Put the final candidates smRNAs fasta file in the query folder as q.fasta and the human target genome in the the folder target as t.fa.
 
@@ -69,7 +75,11 @@ nextflow run ../2.matrix_workflow/Matrix_maker.nf --list INPUT
 ```
 This will produce a results/ folder containing the energy variation matrixes for all the couples. 
 
-The code inside the jupyter notebook Filter.ipynb will use the trained model from point 2 to discriminate true and false positive targets (True:1; False:0).
+### req2.txt
+
+The code inside the model_filter.py will use the trained model from point 2 to discriminate true and false positive targets (True:1; False:0).
+
+The code inside TopGO.R will perform the TopGO analysis over the true targets (interactive mode - e.g RStudio)
 
 
 
