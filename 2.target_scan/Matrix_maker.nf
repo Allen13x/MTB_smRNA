@@ -382,7 +382,7 @@ n=int(df.columns[(np.where((df.iloc[0]==100)))][0])-1
 
 
 cmax=int(np.where(n+100>int(df.shape[1]),int(df.shape[1]),max(n+100,min(df.shape[1],200))))
-cmin=int(np.where(n-99<1,1,min(n-99,max(df.shape[1]-200,1))))
+cmin=int(np.where(n-99<1,1,min(n-99,max(df.shape[1]-199,1))))
 
 mat=df.iloc[:,cmin:cmax+1]
 name="$i"+'_'+"$srna"+'_'+"$mrna"+'_w.csv'
