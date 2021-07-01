@@ -41,7 +41,9 @@ do
 done
 
 ### Run sRNARFTarget prediction for query sRNA
+git clone https://github.com/BioinformaticsLabAtMUN/sRNARFTarget.git
 
-nextflow run sRNARFTarget.nf --m target/t.fa --s query/q.fasta
+cd sRNARFTarget
+nextflow run sRNARFTarget.nf --m ../target/t.fa --s ../query/q.fasta
 
-cp sRNARFTargetResult/Prediction_probabilities.csv Predictions/Prediction_probabilities.csv
+cp sRNARFTargetResult/Prediction_probabilities.csv ../Predictions/Prediction_probabilities.csv
