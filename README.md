@@ -9,7 +9,7 @@ The overall workflow is divided in sub-folders ordered by number
 
 0.smRNA_Candidates -> 1.Target_benchamrking -> 2.Matrix_workflow -> 3.Host-Pathogen_Interactions
 
-Each folder containts the req.yml file to create a conda environment with all the package needed to run the scripts (except R)
+Each folder containts the req.txt file to create a conda environment with all the package needed to run the scripts (except R)
 
 ## 0.smRNA_Candidates
 
@@ -30,7 +30,7 @@ The Benchmark.R script will compare the AUC of each algorithm and joint predicti
 
 ## 2.Target_scan
 
-### req1.yml
+### req1.txt
 
 A nextflow pipeline to produce the training set for the Tensorflow model is contained in the script Matrix_maker.nf. The input file must have the format:
 
@@ -42,7 +42,7 @@ nextflow run Matrix_maker.nf --train --list INPUT --outdir Train_dataset
 ```
 Replace INPUT with the path to the input file
 
-### req2.yml
+### req2.txt
 
 The code will produce a Train_dataset folder with the energy variation matrixes inside the two folders t and f (Labels for the model training)
 
