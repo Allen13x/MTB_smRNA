@@ -44,10 +44,10 @@ Replace INPUT with the path to the input file
 
 ### req2.txt
 
-The code will produce a Train_dataset folder with the energy variation matrixes inside the two folders t and f (Labels for the model training)
+The Nextflow pipeline will produce a Train_dataset folder with the energy variation matrixes inside the two folders t and f (Labels for the model training)
 
 
-The codes inside tf.py will create, train and store the model.
+The codes inside tf.py will create, train and store the model based on the content of Train_dataset folder.
 
 ## 3.Host-Pathogen_Interactions
 
